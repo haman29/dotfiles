@@ -1,6 +1,6 @@
 [user]
-  name = Tomohito Ozaki
-  email = ozaki@yuroyoro.com
+  name = Kyohei Hamada
+  email = kyohei.hamada@gmail.com
 [color]
   # colorの設定(以下のコマンドは自動で色つける)
   status = auto
@@ -8,6 +8,7 @@
   branch = auto
   interactive = auto
   grep = auto
+  ui = auto
 [push]
   default = tracking       # defaultのpush先はtrackingしているリポジトリ
 [core]
@@ -15,6 +16,7 @@
   autocrlf = input                 # CRLFを自動変換
   editor = vim
   quotepath = false
+  pager = less -r
 [merge]
   tool = vimdiff
   ff = false
@@ -23,9 +25,8 @@
 [pull]
   rebase = true
 [alias]
-  s   = status
+  s = status --short --branch
   st  = status
-  ss  = status -s
   sh  = show
   so  = remote show origin
   # pull/push/fetch
@@ -59,7 +60,7 @@
   cm  = checkout master
   cd  = checkout develop
   # branch関連
-  br  = branch
+  b   = branch
   ba  = branch -a           # originも含めた全てのbranchを表示
   bm  = branch --merged     # merge済みのbranchを表示
   bn  = branch --no-merged  # mergeしてないbranchを表示
@@ -154,6 +155,7 @@
   fs  = flow support
 
   fizzbuzz = "!f() { seq "$@" | awk '$0=NR%15?NR%5?NR%3?$0:\"Fizz\":\"Buzz\":\"FizzBuzz\"' ;}; f"
+  br = browse-remote
 
 [http]
   sslVerify = false
@@ -163,3 +165,8 @@
   generic = G move-last-line
   generic = ^F move-page-down
   generic = ^B move-page-up
+[browse-remote "github.com"]
+  top = https://{host}/{path}
+  ref = https://{host}/{path}/tree/{short_ref}
+  rev = https://{host}/{path}/commit/{commit}
+  file = "https://{host}/{path}/blob/{short_rev}/{file}{line && \"#L%d\" % line}"
