@@ -7,9 +7,13 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
+    !mkdir -p ~/.vim/bundle
+    !git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle.vim
+    let s:bootstrap=1
+endif
 
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
+  NeoBundle 'Shougo/neobundle.vim'
 
 " Edit {{{
   " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
@@ -43,7 +47,7 @@ endif
   NeoBundle 'Gundo'
 
   " surround.vim : テキストを括弧で囲む／削除する
-  NeoBundle 'tpope/surround.vim'
+  NeoBundle 'surround.vim'
 
   " smartchr.vim : ==などの前後を整形
   NeoBundle 'smartchr'
@@ -101,7 +105,7 @@ endif
   NeoBundle 'Shougo/neocomplcache'
 
   " neocomplcacheのsinpet補完
-  NeoBundle 'Shougo/neocomplcache-snippets-complete'
+  NeoBundle 'Shougo/neosnippet'
 
   " for rsense
   NeoBundle 'm2ym/rsense'
@@ -111,7 +115,7 @@ endif
   " NeoBundle 'ujihisa/neco-ruby'
 
   " A neocomplcache plugin for English, using look command
-  " NeoBundle 'ujihisa/neco-look'
+  NeoBundle 'ujihisa/neco-look'
 " }}}
 
 " Searching/Moving{{{
@@ -284,14 +288,18 @@ endif
   " A framework to read/write fake:path
   NeoBundle 'kana/vim-metarw'
 
+  " クリップボードを共有
+  NeoBundle 'kana/vim-fakeclip'
+
 " }}}
 
 " ColorSchema{{{{
   " color schema 256
+  NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'desert256.vim'
   NeoBundle 'mrkn256.vim'
   NeoBundle 'tomasr/molokai'
-  NeoBundle 'yuroyoro/yuroyoro256.vim'
+  " NeoBundle 'yuroyoro/yuroyoro256.vim'
 " }}}
 
 " Unite {{{{
@@ -306,7 +314,33 @@ endif
   NeoBundle 'choplin/unite-vim_hacks'
 
 " }}}
-"
-" NeoBundle 'gmarik/vundle'
+"  Oter{{{{
+
+NeoBundle 'honza/snipmate-snippets'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'ujihisa/unite-font'
+NeoBundle 'vim-scripts/svn-diff.vim'
+NeoBundle 'ack.vim'
+NeoBundle 'wesleyche/SrcExpl'
+NeoBundle 'vim-scripts/Trinity'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/vim-metarw-simplenote'
+NeoBundle 'vim-scripts/sudo.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'Gist.vim'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'joonty/vim-xdebug.git'
+" NeoBundle 'DBGp-client'
+NeoBundle 'Shougo/vimfiler'
+
+"  }}}
+
+if exists("s:bootstrap") && s:bootstrap
+    unlet s:bootstrap
+    BundleInstall
+endif
 
 filetype plugin indent on

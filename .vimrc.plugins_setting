@@ -30,12 +30,6 @@ command! Mt :TMiniBufExplorer
 let g:Align_xstrlen = 3
 
 "------------------------------------
-" VTreeExplorer
-"------------------------------------
-" 縦に表示する
-let g:treeExplVertical=1
-
-"------------------------------------
 " NERD_commenter.vim
 "------------------------------------
 " コメントの間にスペースを空ける
@@ -124,6 +118,7 @@ nnoremap <Leader>l<Space> :BufExplorer<CR>
 "------------------------------------
 " VTreeExplorer
 "------------------------------------
+" 縦に表示する
 let g:treeExplVertical=1
 "<Leader>t<Space>でディレクトリツリー表示
 noremap <Leader>t<Space> :VSTreeExplore<CR>
@@ -261,7 +256,7 @@ nmap <silent> <unique> <Leader>ec :ErrorAtCursor<CR>
 " vimshell
 "------------------------------------
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
+" let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
 let g:vimshell_enable_smart_case = 1
 
 if has('win32') || has('win64')
@@ -315,7 +310,7 @@ command! Vs :VimShell
 "------------------------------------
 " The prefix key.
 nnoremap    [unite]   <Nop>
-nmap    f [unite]
+nmap    <Leader>f [unite]
 
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 
@@ -459,3 +454,36 @@ autocmd User Rails call SetUpRailsSetting()
 "------------------------------------
 let g:metarw_redmine_server = 'http://redmine.dev.scaleout.jp'
 let g:metarw_redmine_apikey = '2ed945f405865ec799ff91b7bb364215f932c51c'
+
+"------------------------------------
+" Shougo/neosnippet
+"------------------------------------
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+    set conceallevel=2 concealcursor=i
+endif
+
+" Tell Neosnippet about the other snippets
+" let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+
+"------------------------------------
+" kana/vim-fakeclip
+"------------------------------------
+" yank/paste/delete でクリップボードを使う
+set clipboard=unnamed
+
+"------------------------------------
+" Shougo/vimfiler
+"------------------------------------
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+let g:vimfiler_pedit_command = 'vnew'
+

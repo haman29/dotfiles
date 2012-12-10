@@ -1,5 +1,5 @@
-
 # ls
+alias ls='ls -G'
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
@@ -40,6 +40,7 @@ alias ccat='pygmentize -O style=vim -f console256 -g'
 alias less='less -r'
 
 # grep
+alias 'grep'='grep --color=auto -ERUIn'
 alias 'gr'='grep --color=auto -ERUIn'
 
 #make
@@ -48,12 +49,12 @@ alias 'mn'='make native-code'
 alias 'mc'='make clean'
 
 # screen
-alias s='screen -U'
-alias sc='screen -S main'
-alias sn='screen'
-alias sl='screen -ls'
-alias sr='screen -r main'
-alias srr='screen -U -D -RR'
+# alias s='screen -U'
+# alias sc='screen -S main'
+# alias sn='screen'
+# alias sl='screen -ls'
+# alias sr='screen -r main'
+# alias srr='screen -U -D -RR'
 
 # tmux
 alias tm='tmux'
@@ -67,8 +68,9 @@ alias pon='predict-on'
 alias poff='predict-off'
 alias p='ping -c 4'
 
-#alias ls='ls -al'
 alias cp='nocorrect cp -irp'
+alias mv='mv -i'
+alias rm='rm -i'
 alias refe='nocorrect refe'
 
 # git

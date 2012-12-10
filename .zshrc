@@ -39,7 +39,8 @@ case ${UID} in
     RED="%{${fg[red]}%}"
     CYAN="%{${fg[cyan]}%}"
     WHITE="%{${fg[white]}%}"
-    POH="( ꒪⌓꒪) $"
+    POH="
+$"
 
     #
     # Prompt
@@ -222,7 +223,8 @@ setopt extended_glob
 # emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
 #   to end of it)
 #
-bindkey -v
+# bindkey -v
+bindkey -e
 
 # historical backward/forward search with linehead string binded to ^P/^N
 #
@@ -240,8 +242,8 @@ bindkey '^S' history-incremental-pattern-search-forward
 
 ## Command history configuration
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 
 # 登録済コマンド行は古い方を削除
 setopt hist_ignore_all_dups
@@ -333,8 +335,8 @@ zle -N cdup
 # bindkey '\^' cdup
 
 # ctrl-w, ctrl-bキーで単語移動
-bindkey "^W" forward-word
-bindkey "^B" backward-word
+# bindkey "^W" forward-word
+# bindkey "^B" backward-word
 
 # back-wordでの単語境界の設定
 autoload -Uz select-word-style
@@ -432,7 +434,7 @@ esac
 
 ## terminal configuration
 # http://journal.mycom.co.jp/column/zsh/009/index.html
-unset LSCOLORS
+# unset LSCOLORS
 
 case "${TERM}" in
 xterm)
@@ -448,7 +450,7 @@ kterm)
 
 cons25)
     unset LANG
-  export LSCOLORS=ExFxCxdxBxegedabagacad
+  # export LSCOLORS=ExFxCxdxBxegedabagacad
 
     export LS_COLORS='di=01;32:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30'
     zstyle ':completion:*' list-colors \
@@ -464,8 +466,8 @@ kterm*|xterm*)
     # export LSCOLORS=gxfxcxdxbxegedabagacad
     # export LS_COLORS='di=1;34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30'
 
-    export CLICOLOR=1
-    export LSCOLORS=ExFxCxDxBxegedabagacad
+    # export CLICOLOR=1
+    # export LSCOLORS=ExFxCxDxBxegedabagacad
 
     zstyle ':completion:*' list-colors \
         'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
@@ -479,6 +481,7 @@ esac
 
 
 export EDITOR=vim
+export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
 export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:/sbin:/usr/local/bin
