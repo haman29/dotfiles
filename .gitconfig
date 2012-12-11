@@ -25,6 +25,7 @@
 [pull]
   rebase = true
 [alias]
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
   s = status --short --branch
   st  = status
   sh  = show
@@ -52,7 +53,7 @@
   # comit
   ad  = add
   c   = commit
-  ci  = commit -a           # modifiedなファイルを全てstageへ
+  ci  = commit              # modifiedなファイルを全てstageへ
   cam = commit -a --amend   # 直前のcommitを修正
   co  = checkout
   cb  = checkout -b         # branch切ってcheckoutする

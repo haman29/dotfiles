@@ -112,7 +112,7 @@ endif
   NeoBundle 'taichouchou2/vim-rsense'
 
   " rubyでrequire先を補完する
-  " NeoBundle 'ujihisa/neco-ruby'
+  NeoBundle 'ujihisa/neco-ruby'
 
   " A neocomplcache plugin for English, using look command
   NeoBundle 'ujihisa/neco-look'
@@ -120,7 +120,7 @@ endif
 
 " Searching/Moving{{{
   " smooth_scroll.vim : スクロールを賢く
-  NeoBundle 'Smooth-Scroll'
+  " NeoBundle 'Smooth-Scroll'
 
   " vim-smartword : 単語移動がスマートな感じで
   NeoBundle 'smartword'
@@ -296,9 +296,9 @@ endif
 " ColorSchema{{{{
   " color schema 256
   NeoBundle 'altercation/vim-colors-solarized'
-  NeoBundle 'desert256.vim'
-  NeoBundle 'mrkn256.vim'
-  NeoBundle 'tomasr/molokai'
+  " NeoBundle 'desert256.vim'
+  " NeoBundle 'mrkn256.vim'
+  " NeoBundle 'tomasr/molokai'
   " NeoBundle 'yuroyoro/yuroyoro256.vim'
 " }}}
 

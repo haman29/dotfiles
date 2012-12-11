@@ -250,7 +250,7 @@ xmap <silent> ie <Plug>CamelCaseMotion_ie
 "------------------------------------
 " disable default shortcut mapping and re-define to <Leader>ec
 let g:errormarker_disablemappings = 1
-nmap <silent> <unique> <Leader>ec :ErrorAtCursor<CR>
+" nmap <silent> <unique> <Leader>ec :ErrorAtCursor<CR>
 
 "------------------------------------
 " vimshell
@@ -452,8 +452,8 @@ autocmd User Rails call SetUpRailsSetting()
 "------------------------------------
 " mattn/vim-metarw-redmine
 "------------------------------------
-let g:metarw_redmine_server = 'http://redmine.dev.scaleout.jp'
-let g:metarw_redmine_apikey = '2ed945f405865ec799ff91b7bb364215f932c51c'
+let g:metarw_redmine_server = 'http://dev.whytelist.com/redmine/'
+let g:metarw_redmine_apikey = ''
 
 "------------------------------------
 " Shougo/neosnippet
@@ -487,3 +487,49 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_pedit_command = 'vnew'
 
+"------------------------------------
+" thinca/vim-ref
+"------------------------------------
+nnoremap <Leader>rr :<C-U>Ref refe<Space>
+nnoremap <Leader>rp :<C-U>Ref phpmanual<Space>
+
+" ruby
+let g:ref_refe_cmd = "rurema" " reqired rurema
+let g:ref_refe_version = 2
+
+" php
+let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
+" let g:ref_phpmanual_path='~/.vim/dict/php.dict'
+
+"------------------------------------
+" Shougo/neocomplcache
+"------------------------------------
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use auto select
+"let g:neocomplcache_enable_auto_select = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+" Set manual completion length.
+let g:neocomplcache_manual_completion_start_length = 0
+
+" Define dictionary.
+ let g:neocomplcache_dictionary_filetype_lists = {
+\ 'default' : '',
+\ 'c' : $HOME.'/.vim/dict/c.dict',
+\ 'cpp' : $HOME.'/.vim/dict/cpp.dict',
+\ 'java' : $HOME.'/.vim/dict/java.dict',
+\ 'javascript' : $HOME.'/.vim/dict/javascript.dict',
+\ 'lua' : $HOME.'/.vim/dict/lua.dict',
+\ 'ocaml' : $HOME.'/.vim/dict/ocaml.dict',
+\ 'perl' : $HOME.'/.vim/dict/perl.dict',
+\ 'php' : $HOME.'/.vim/dict/php.dict',
+\ 'scheme' : $HOME.'/.vim/dict/scheme.dict',
+\ 'vim' : $HOME.'/.vim/dict/vim.dict'
+\ }
