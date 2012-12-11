@@ -74,6 +74,7 @@
   la  = log --pretty=\"format:%ad %h (%an): %s\" --date=short  # ざっくりログ出す
   lr  = log origin          # originのlog
   ll = log --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' # onelineでlogを出す
+  ln = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
   oneline = log --pretty=oneline
   ranking = shortlog -s -n --no-merges
   # logをtree表示
