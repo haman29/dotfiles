@@ -271,7 +271,7 @@ endif
   NeoBundle 'yuroyoro/vimdoc_ja'
 
   " vim上のtwitter client
-  NeoBundle 'TwitVim'
+  " NeoBundle 'TwitVim'
 
   " Lingrのclient
   NeoBundle 'tsukkee/lingr-vim'

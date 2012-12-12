@@ -22,13 +22,13 @@ nnoremap <leader>tM  :<C-u>tabmove -1<CR>
 nnoremap <leader>tj  :<C-u>execute 'tabnext' 1 + (tabpagenr() + v:count1 - 1) % tabpagenr('$')<CR>
 
 "tags-and-searchesを使い易くする
-nnoremap t  <Nop>
-"「飛ぶ」
-nnoremap tt  <C-]>
-"「進む」
-nnoremap tj  ;<C-u>tag<CR>
-"「戻る」
-nnoremap tk  ;<C-u>pop<CR>
-"履歴一覧
-nnoremap tl  ;<C-u>tags<CR>
+" nnoremap t  <Nop>
+" "「飛ぶ」
+" nnoremap tt  <C-]>
+" "「進む」
+" nnoremap tj  ;<C-u>tag<CR>
+" "「戻る」
+" nnoremap tk  ;<C-u>pop<CR>
+" "履歴一覧
+" nnoremap tl  ;<C-u>tags<CR>
 
