@@ -335,6 +335,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'joonty/vim-xdebug.git'
 " NeoBundle 'DBGp-client'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'ecomba/vim-ruby-refactoring'
 
 "  }}}
 

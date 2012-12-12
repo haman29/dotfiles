@@ -93,3 +93,8 @@ nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 " sudo で開いていないファイルをsudoで保存する
 cmap w!! %!sudo tee > /dev/null %
 
+" For local replace
+nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
+
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
