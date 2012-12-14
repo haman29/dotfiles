@@ -223,8 +223,8 @@ setopt extended_glob
 # emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
 #   to end of it)
 #
-# bindkey -v
-bindkey -e
+bindkey -v
+# bindkey -e
 
 # historical backward/forward search with linehead string binded to ^P/^N
 #
@@ -235,6 +235,9 @@ bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
+
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
 
 # glob(*)によるインクリメンタルサーチ
 bindkey '^R' history-incremental-pattern-search-backward

@@ -2,9 +2,6 @@
 set editing-mode vi
 set keymap vi-insert
 
-# チルダをタブにより展開
-set expand-tilde on
-
 # 日本語関係
 set input-meta on
 set convert-meta off

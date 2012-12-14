@@ -1,0 +1,69 @@
+"3.5 (created: 2012/08/04 00:41:20)
+" vim: set ft=vimperator:
+source! /Users/hamada/.vimperatorrc.local
+
+set history=5000
+
+cnoremap <C-p> <S-TAB>
+cnoremap <C-n> <TAB>
+
+cnoremap <C-S-p> <PageUp>
+cnoremap <C-S-n> <PageDown>
+
+nnoremap h H
+nnoremap l L
+
+
+" l=Smart Completions, S=Google Search Suggestions
+set complete=lS
+
+set focuscontent
+
+"------------------------
+" options
+"------------------------
+" ヒントの文字列をアルファベットに
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+" ヒントの装飾
+hi Hint font-family: Ricty; font-size: 15px; padding: 0 .2em; background-color: #f07e00; color: white;
+hi HintElem background-color: #fdffc3; color: #222;
+hi HintActive background-color: #ffdcdc;
+
+" Beep音無効
+set visualbell
+hi Bell display: none;
+
+"------------------------
+" mappings
+"------------------------
+" leader
+let mapleader = ","
+
+" タブ順序変更
+nnoremap <C-S-p> :tabmove! -1<CR>
+nnoremap <C-S-n> :tabmove! +1<CR>
+
+" visual modeで選択したテキストを検索
+vnoremap P y<Esc><Esc>P
+
+"------------------------
+" command
+"------------------------
+" カレンダーを表示
+command cal :js liberator.echo(<datepicker type="grid" xmlns={XUL}/>)
+
+"------------------------
+" plugins
+"------------------------
+" plugin_loader.js
+let g:plugin_loader_roots = "~/repository/vimperator-plugins/ ~/.vimperator/load/"
+let g:plugin_loader_plugins = "_libly,account_switcher,appendAnchor,auto_reload,copy,direct_bookmark,feedSomeKeys_3,hatenaStar,multi_requester,pino,sbmcommentsviewer,tombloo,walk-input,stella,opener,bitly,x-hint,auto_source,reload-image,loginManager,statusline-toolbar,migemo_find,hint-tombloo,caret-hint,prevent-pseudo-domain,lo,liberator-overlay-ext,auto-bookmark,QB,hint-ext,commandBookmarklet,nicolist,_smooziee,addhatebu"
+
+" multi_requester
+nnoremap <leader>ma :mr alc<Space>
+nnoremap <leader>mt :mr googletrans-en<Space>
+nnoremap <leader>mT :mr googletrans-ja<Space>
+
+" _smooziee
+let g:smooziee_scroll_amount="250"
+let g:smooziee_scroll_interval="10"
