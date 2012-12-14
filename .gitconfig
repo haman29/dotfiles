@@ -23,7 +23,7 @@
 [branch]
   autosetuprebase = always
 [pull]
-  rebase = true
+  ; rebase = true
 [alias]
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
   s = status --short --branch
@@ -172,3 +172,5 @@
   ref = https://{host}/{path}/tree/{short_ref}
   rev = https://{host}/{path}/commit/{commit}
   file = "https://{host}/{path}/blob/{short_rev}/{file}{line && \"#L%d\" % line}"
+[web]
+  browser = open

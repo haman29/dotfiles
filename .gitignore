@@ -22,4 +22,5 @@ samples
 .vim/.netrwhist
 .vimrc_sample
 
-/sm
+!.vimperator/default/quickmarks
+.vimperator/default/

@@ -6,19 +6,21 @@
 " YankRing.vim
 "------------------------------------
 " Yankの履歴参照
-nmap ,y ;YRShow<CR>
+nmap ,y :YRShow<CR>
 
 "------------------------------------
 " MiniBufExplorer
 "------------------------------------
 "set minibfexp
-let g:miniBufExplMapWindowNavVim=1 "hjklで移動
+" let g:miniBufExplMapWindowNavVim=1 "hjklで移動
 let g:miniBufExplSplitBelow=0  " Put new window above
 let g:miniBufExplMapWindowNavArrows=1
 let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplModSelTarget=1
 let g:miniBufExplSplitToEdge=1
 let g:miniBufExplMaxSize = 10
+
+
 
 ":MtでMiniBufExplorerの表示トグル
 command! Mt :TMiniBufExplorer
@@ -177,7 +179,7 @@ let Tlist_Auto_Open = 1                   " 自動表示
 let Tlist_Auto_Update = 1
 let Tlist_WinWidth = 30
 "map <silent> <leader>tl :Tlist<CR>        " taglistを開くショットカットキー
-nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+" nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
 nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
 
 "------------------------------------
@@ -187,8 +189,8 @@ nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<
 let g:SrcExpl_UpdateTags    = 1         " tagsをsrcexpl起動時に自動で作成（更新）
 let g:SrcExpl_RefreshTime   = 0         " 自動表示するまでの時間(0:off)
 let g:SrcExpl_WinHeight     = 9         " プレビューウインドウの高さ
-let g:SrcExpl_RefreshMapKey = "<Space>" " 手動表示のMAP
-let g:SrcExpl_GoBackMapKey  = "<C-b>"   " 戻る機能のMAP
+" let g:SrcExpl_RefreshMapKey = "<Space>" " 手動表示のMAP
+" let g:SrcExpl_GoBackMapKey  = "<C-b>"   " 戻る機能のMAP
 " Source Explorerの機能ON/OFF
 " nmap <F8> :CMiniBufExplorer<CR>:SrcExplToggle<CR>:TMiniBufExplorer<CR>
 
