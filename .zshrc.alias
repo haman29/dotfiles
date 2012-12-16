@@ -133,4 +133,4 @@ grepvim() {
     fi
 }
 alias grv='grepvim'
-
+alias rtags='/usr/local/bin/ctags -R --langmap=RUBY:.rb --sort=yes /usr/local/Cellar/ruby/1.9.3-p327 -f ~/rtags '

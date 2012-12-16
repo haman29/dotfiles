@@ -6,21 +6,18 @@
 " YankRing.vim
 "------------------------------------
 " Yankの履歴参照
-nmap ,y :YRShow<CR>
+nmap <Leader>y :YRShow<CR>
 
 "------------------------------------
 " MiniBufExplorer
 "------------------------------------
 "set minibfexp
-" let g:miniBufExplMapWindowNavVim=1 "hjklで移動
 let g:miniBufExplSplitBelow=0  " Put new window above
 let g:miniBufExplMapWindowNavArrows=1
 let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplModSelTarget=1
 let g:miniBufExplSplitToEdge=1
 let g:miniBufExplMaxSize = 10
-
-
 
 ":MtでMiniBufExplorerの表示トグル
 command! Mt :TMiniBufExplorer
@@ -36,8 +33,6 @@ let g:Align_xstrlen = 3
 "------------------------------------
 " コメントの間にスペースを空ける
 let NERDSpaceDelims = 1
-"<Leader>xでコメントをトグル(NERD_commenter.vim)
-map <Leader>x, c<space>
 ""未対応ファイルタイプのエラーメッセージを表示しない
 let NERDShutUp=1
 
@@ -199,10 +194,10 @@ let g:SrcExpl_WinHeight     = 9         " プレビューウインドウの高�
 "------------------------------------
 
 " カーソル下のURLをブラウザで開く
-nmap <Leader>fu <Plug>(openbrowser-open)
-vmap <Leader>fu <Plug>(openbrowser-open)
+" nmap <Leader>fu <Plug>(openbrowser-open)
+" vmap <Leader>fu <Plug>(openbrowser-open)
 " カーソル下のキーワードをググる
-nnoremap <Leader>fs :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+" nnoremap <Leader>fs :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
 "------------------------------------
 " operator-camelize.vim
@@ -395,7 +390,7 @@ autocmd BufReadPost *_spec.rb call RSpecQuickrun()
 "------------------------------------
 " Pydiction
 "------------------------------------
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+" let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 "------------------------------------
 " Syntastic
@@ -413,8 +408,6 @@ nmap <C-S-t> <Plug>ToggleN
 vmap <C-S-t> <Plug>ToggleV
 
 let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'yes':'no', 'no':'yes', 'enable':'disable', 'disable':'enable', 'pick':'reword', 'reword':'fixup', 'fixup':'squash', 'squash':'edit', 'edit':'exec', 'exec':'pick' }
-
-
 
 "------------------------------------
 " vim-rails.vim
@@ -441,12 +434,12 @@ function! SetUpRailsSetting()
   nmap <buffer><Space>s :Rspec<Space>
   nmap <buffer><Space>p :Rpreview<CR>
   nmap <buffer><Space>t :Runittest<CR>
-  au FileType ruby,eruby,ruby.rspec let g:neocomplcache_dictionary_filetype_lists = {
-        \'ruby' : $HOME.'/.vim/dict/rails.dict',
-        \'eruby' : $HOME.'/.vim/dict/rails.dict'
-        \}
-  setl dict+=~/.vim/dict/rails.dict
-  setl dict+=~/.vim/dict/ruby.dict
+  " au FileType ruby,eruby,ruby.rspec let g:neocomplcache_dictionary_filetype_lists = {
+        " \'ruby' : $HOME.'/.vim/dict/rails.dict',
+        " \'eruby' : $HOME.'/.vim/dict/rails.dict'
+        " \}
+  " setl dict+=~/.vim/dict/rails.dict
+  " setl dict+=~/.vim/dict/ruby.dict
 endfunction
 autocmd User Rails call SetUpRailsSetting()
 
@@ -501,7 +494,6 @@ let g:ref_refe_version = 2
 
 " php
 let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
-" let g:ref_phpmanual_path='~/.vim/dict/php.dict'
 
 "------------------------------------
 " Shougo/neocomplcache
@@ -536,7 +528,44 @@ let g:neocomplcache_manual_completion_start_length = 0
 \ 'vim' : $HOME.'/.vim/dict/vim.dict'
 \ }
 
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+
 "------------------------------------
 " ecomba/vim-ruby-refactoring
 "------------------------------------
 let g:ruby_refactoring_map_keys=1
+
+"------------------------------------
+" rsense
+"------------------------------------
+let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
+let g:rsenseUseOmniFunc = 1

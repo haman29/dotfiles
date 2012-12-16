@@ -43,6 +43,13 @@ let mapleader = ","
 nnoremap <C-S-p> :tabmove! -1<CR>
 nnoremap <C-S-n> :tabmove! +1<CR>
 
+" タブ移動
+nnoremap <Left>  <C-p>
+nnoremap <Right> <C-n>
+nnoremap a <C-p>
+nnoremap s <C-n>
+
+
 " visual modeで選択したテキストを検索
 vnoremap P y<Esc><Esc>P
 
