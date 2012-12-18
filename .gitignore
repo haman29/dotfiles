@@ -25,3 +25,4 @@ samples
 .vimperator/info/default/*
 !.vimperator/info/default/quickmarks
 .vimperator/plugin/
+/sm

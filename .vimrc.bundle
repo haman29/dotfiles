@@ -19,7 +19,7 @@ endif
   " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
   NeoBundle 'scrooloose/nerdcommenter.git'
 
-  " ruby の コメント入力を素早く s# s=
+  " ruby の コメント入力を素早く visual mode s# s=
   NeoBundle 'tomtom/tcomment_vim'
 
   " 自動閉じタグ
