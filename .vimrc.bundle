@@ -348,6 +348,8 @@ NeoBundle 'vim-scripts/dbext.vim'
 
 NeoBundle 'taichouchou2/vim-ref-ri'
 NeoBundle 'skwp/vim-rspec'
+NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'mattn/mkdpreview-vim'
 
 "  }}}
 

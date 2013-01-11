@@ -55,7 +55,7 @@ nmap y0 y^
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
 
-" 保存時にtabを2つスペースに変換する
+" 保存時にtabを4つスペースに変換する
 autocmd BufWritePre * :%s/\t/    /ge
 
 " 日時の自動入力
@@ -98,3 +98,11 @@ nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
 
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+" コピーした文字で、繰り返し上書きペーストする
+vnoremap <silent> <C-p> "0p<CR>
+
+" 文字列連結時に挿入される space を除去する
+nnoremap J Jx
+
+

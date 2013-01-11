@@ -194,23 +194,26 @@ let g:SrcExpl_WinHeight     = 9         " プレビューウインドウの高�
 "------------------------------------
 
 " カーソル下のURLをブラウザで開く
-" nmap <Leader>fu <Plug>(openbrowser-open)
-" vmap <Leader>fu <Plug>(openbrowser-open)
+nmap <Leader>oo <Plug>(openbrowser-open)
+vmap <Leader>oo <Plug>(openbrowser-open)
+
 " カーソル下のキーワードをググる
-" nnoremap <Leader>fs :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+nnoremap <Leader>os :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
 "------------------------------------
 " operator-camelize.vim
 "------------------------------------
 " camel-caseへの変換
-map <Leader>u <Plug>(operator-camelize)
-map <Leader>U <Plug>(operator-decamelize)
+" map <Leader>u <Plug>(operator-camelize)
+" map <Leader>U <Plug>(operator-decamelize)
 
 "------------------------------------
 " operator-replace.vim
 "------------------------------------
 " RwなどでYankしてるもので置き換える
-map R <Plug>(operator-replace)
+" map R <Plug>(operator-replace)
+vmap p <Plug>(operator-replace)
+
 
 "------------------------------------
 " sumartword.vim
@@ -307,7 +310,7 @@ command! Vs :VimShell
 "------------------------------------
 " The prefix key.
 nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
+nmap    <Leader>u [unite]
 
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 
@@ -369,6 +372,8 @@ cnoremap UO Unite outline<Enter>
 "------------------------------------
 let g:quickrun_config = {}
 let g:quickrun_config._ = {'runner' : 'vimproc'}
+
+" rspec
 let g:quickrun_config['rspec/bundle'] = {
   \ 'type': 'rspec/bundle',
   \ 'command': "rspec",
@@ -387,6 +392,26 @@ function! RSpecQuickrun()
   let b:quickrun_config = {'type' : 'rspec/bundle'}
 endfunction
 autocmd BufReadPost *_spec.rb call RSpecQuickrun()
+
+" PHPUnit
+let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
+augroup QuickRunPHPUnit
+    autocmd!
+    autocmd BufWinEnter,BufNewFile test*.php set filetype=php.unit
+    autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
+augroup END
+
+" coffee script
+let g:quickrun_config['coffee'] = {'command' : 'coffee'}
+" 保存時に自動コンパイル
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+
+" mysql(できない)
+let g:quickrun_config['mysql'] = {
+  \ 'command': 'mysql',
+  \ 'exec': '%c -u username -pmypassword testdb < %s',
+  \ }
+
 "------------------------------------
 " Pydiction
 "------------------------------------
@@ -499,11 +524,9 @@ let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
 " Shougo/neocomplcache
 "------------------------------------
 " Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
-" Use auto select
-"let g:neocomplcache_enable_auto_select = 1
 " Use camel case completion.
 let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
@@ -553,7 +576,7 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
