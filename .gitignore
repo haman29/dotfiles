@@ -18,11 +18,19 @@ Session.vim
 .zshrc.local
 samples
 
+# for vim
 .vim/bundle/
 .vim/.netrwhist
 .vimrc_sample
 
+# for vimperator
 .vimperator/info/default/*
 !.vimperator/info/default/quickmarks
 .vimperator/plugin/
 /sm
+
+# for automation php unit test
+/composer.json
+/composer.lock
+/composer.phar
+/vendor/
