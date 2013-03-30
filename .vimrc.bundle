@@ -44,7 +44,7 @@ endif
   NeoBundle 'h1mesuke/vim-alignta'
 
   " YankRing.vim : ヤンクの履歴を管理し、順々に参照、出力できるようにする
-  NeoBundle 'YankRing.vim'
+  " NeoBundle 'YankRing.vim'
 
   " undo履歴を追える (need python support)
   NeoBundle 'Gundo'
@@ -222,14 +222,6 @@ endif
   " DumbBuf.vim : quickbufっぽくbufferを管理。 "<Leader>b<Space>でBufferList
   NeoBundle 'DumbBuf'
 
-  " minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
-  NeoBundle 'minibufexpl.vim'
-
-  " NERDTree : ツリー型エクスプローラ
-  NeoBundle 'The-NERD-tree'
-
-  " vtreeexplorer.vim : ツリー状にファイルやディレクトリの一覧を表示
-  NeoBundle 'vtreeexplorer'
 " }}}
 
 
@@ -329,7 +321,6 @@ NeoBundle 'vim-scripts/svn-diff.vim'
 NeoBundle 'ack.vim'
 NeoBundle 'wesleyche/SrcExpl'
 NeoBundle 'vim-scripts/Trinity'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/vim-metarw-simplenote'
 NeoBundle 'vim-scripts/sudo.vim'
@@ -348,10 +339,10 @@ NeoBundle 'vim-scripts/dbext.vim'
 
 NeoBundle 'taichouchou2/vim-ref-ri'
 NeoBundle 'skwp/vim-rspec'
-NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'kmnk/vim-unite-git'
 NeoBundle 'mattn/mkdpreview-vim'
 
-
+NeoBundle 'tangledhelix/vim-octopress.git'
 
 "  }}}
 

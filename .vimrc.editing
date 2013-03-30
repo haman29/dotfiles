@@ -17,7 +17,8 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 set expandtab
 
 " コンマの後に自動的にスペースを挿入
-inoremap , ,<Space>
+" inoremap , ,<Space>
+
 " XMLの閉タグを自動挿入
 augroup MyXML
   autocmd!
@@ -32,12 +33,12 @@ inoremap <C-w>  <C-g>u<C-w>
 command! Pt :set paste!
 
 " インサートモード中に<C-o>でyankした内容をputする
-inoremap <C-o> <ESC>:<C-U>YRPaste 'p'<CR>i
+" inoremap <C-o> <ESC>:<C-U>YRPaste 'p'<CR>i
 
 " y9で行末までヤンク
-nmap y9 y$
+" nmap y9 y$
 " y0で行頭までヤンク
-nmap y0 y^
+" nmap y0 y^
 
 "
 " 括弧を自動補完
@@ -53,10 +54,10 @@ nmap y0 y^
 "vnoremap ' "zdi'<C-R>z'<ESC>
 
 " 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
+" autocmd BufWritePre * :%s/\s\+$//ge
 
 " 保存時にtabを4つスペースに変換する
-autocmd BufWritePre * :%s/\t/    /ge
+" autocmd BufWritePre * :%s/\t/    /ge
 
 " 日時の自動入力
 inoremap <expr> ,df strftime('%Y/%m/%d %H:%M:%S')
@@ -101,8 +102,3 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " コピーした文字で、繰り返し上書きペーストする
 vnoremap <silent> <C-p> "0p<CR>
-
-" 文字列連結時に挿入される space を除去する
-nnoremap J Jx
-
-

@@ -1,6 +1,6 @@
 # viキーバインド
-set editing-mode vi
-set keymap vi-insert
+# set editing-mode vi
+# set keymap vi-insert
 
 # 日本語関係
 set input-meta on

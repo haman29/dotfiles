@@ -3,26 +3,6 @@
 "-------------------------------------------------------------------------------
 
 "------------------------------------
-" YankRing.vim
-"------------------------------------
-" Yankの履歴参照
-nmap <Leader>y :YRShow<CR>
-
-"------------------------------------
-" MiniBufExplorer
-"------------------------------------
-"set minibfexp
-let g:miniBufExplSplitBelow=0  " Put new window above
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplSplitToEdge=1
-let g:miniBufExplMaxSize = 10
-
-":MtでMiniBufExplorerの表示トグル
-command! Mt :TMiniBufExplorer
-
-"------------------------------------
 " Align
 "------------------------------------
 " Alignを日本語環境で使用するための設定
@@ -107,22 +87,6 @@ nnoremap <Space>gb :<C-u>Gblame<Enter>
 
 
 "------------------------------------
-" BufExplorer
-"------------------------------------
-"<Leader>l<Space>でBufferList
-nnoremap <Leader>l<Space> :BufExplorer<CR>
-
-"------------------------------------
-" VTreeExplorer
-"------------------------------------
-" 縦に表示する
-let g:treeExplVertical=1
-"<Leader>t<Space>でディレクトリツリー表示
-noremap <Leader>t<Space> :VSTreeExplore<CR>
-"分割したウィンドウのサイズ
-let g:treeExplWinSize=30
-
-"------------------------------------
 " DumbBuf.vim
 "------------------------------------
 "<Leader>b<Space>でBufferList
@@ -170,12 +134,12 @@ let Tlist_Show_One_File = 1               " 現在編集中のソースのタグ
 let Tlist_Exit_OnlyWindow = 1             " taglistのウィンドーが最後のウィンドーならばVimを閉じる
 let Tlist_Use_Right_Window = 1            " 右側でtaglistのウィンドーを表示
 let Tlist_Enable_Fold_Column = 1          " 折りたたみ
-let Tlist_Auto_Open = 1                   " 自動表示
+" let Tlist_Auto_Open = 1                   " 自動表示
 let Tlist_Auto_Update = 1
 let Tlist_WinWidth = 30
 "map <silent> <leader>tl :Tlist<CR>        " taglistを開くショットカットキー
 " nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
-nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+" nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
 
 "------------------------------------
 " Srcexp
@@ -302,8 +266,18 @@ autocmd FileType vimshell
 \| call vimshell#hook#set('preprompt', ['g:my_preprompt'])
 \| call vimshell#hook#set('preexec', ['g:my_preexec'])
 
-command! Vs :VimShell
-
+" ,is: シェルを起動
+nnoremap <silent> ,is :VimShell<CR>
+" ,ipy: pythonを非同期で起動
+nnoremap <silent> ,ipy :VimShellInteractive python<CR>
+" ,irb: irbを非同期で起動
+nnoremap <silent> ,irb :VimShellInteractive irb<CR>
+" ,ipr: pryを非同期で起動
+nnoremap <silent> ,ipr :VimShellInteractive pry<CR>
+" ,ss: 非同期で開いたインタプリタに現在の行を評価させる
+vmap <silent> ,ss :VimShellSendString<CR>
+" 選択中に,ss: 非同期で開いたインタプリタに選択行を評価させる
+nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
 
 "------------------------------------
 " unite.vim
@@ -332,7 +306,7 @@ nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split file<CR>
 let g:yankring_zap_keys = ""
 " from basyura/unite-rails
 nnoremap <silent> [unite]rm  :<C-u>Unite -no-split rails/model<CR>
-nnoremap <silent> [unite]rc  :<C-u>Unite -no-split rails/controller<CR>
+nnoremap <silent> [unmte]rc  :<C-u>Unite -no-split rails/controller<CR>
 nnoremap <silent> [unite]rv  :<C-u>Unite -no-split rails/view<CR>
 nnoremap <silent> [unite]rl  :<C-u>Unite -no-split rails/lib<CR>
 nnoremap <silent> [unite]rj  :<C-u>Unite -no-split rails/javascript<CR>
@@ -472,8 +446,8 @@ autocmd User Rails call SetUpRailsSetting()
 "------------------------------------
 " mattn/vim-metarw-redmine
 "------------------------------------
-let g:metarw_redmine_server = 'http://dev.whytelist.com/redmine/'
-let g:metarw_redmine_apikey = ''
+" let g:metarw_redmine_server = 'http://dev.whytelist.com/redmine/'
+" let g:metarw_redmine_apikey = ''
 
 "------------------------------------
 " Shougo/neosnippet
@@ -481,10 +455,12 @@ let g:metarw_redmine_apikey = ''
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
@@ -506,6 +482,10 @@ set clipboard=unnamed
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 nnoremap <Leader>vf :VimFilerExplorer<CR>
+" vimfiler での検索 を Unite でする
+" autocmd FileType vimfiler
+        " \ nnoremap <buffer><silent>/
+        " \ :<C-u>Unite file -default-action=vimfiler<CR>
 
 "------------------------------------
 " thinca/vim-ref

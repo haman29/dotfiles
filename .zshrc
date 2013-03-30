@@ -162,10 +162,10 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # コマンドのスペルチェックをする
-setopt correct
+# setopt correct
 
 # コマンドライン全てのスペルチェックをする
-setopt correct_all
+# setopt correct_all
 
 # 上書きリダイレクトの禁止
 setopt no_clobber
@@ -416,8 +416,8 @@ esac
 case "${OSTYPE}" in
 # MacOSX
 darwin*)
-    export PATH=$PATH:/opt/local/bin:/opt/local/sbin/
-    export PATH=$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/
+    # export PATH=$PATH:/opt/local/bin:/opt/local/sbin/
+    # export PATH=$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/
     ;;
 freebsd*)
     case ${UID} in
@@ -487,13 +487,25 @@ dumb)
     ;;
 esac
 
-
-
 export EDITOR=vim
+
+###
+# PATH
+###
+# for homebrew
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
-export PATH=$PATH:$HOME/dotfiles/bin
-export PATH=$PATH:/sbin:/usr/local/bin
+export PATH=/usr/local/sbin:$PATH
+
+# for aws_tools
+export PATH=$HOME/aws_tools/bin/:$PATH
+
+# for local
+export PATH=$HOME/bin:$PATH
+
+# for ignore bundle exec
+export PATH=./bin:$PATH
+
+# for manpage path
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 expand-to-home-or-insert () {
@@ -694,3 +706,5 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

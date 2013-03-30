@@ -1,9 +1,3 @@
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin/:~/bin:$PATH
-
-# osx alias
-alias pbc='pbcopy'
-
 # Terminal Colorの設定
 # export CLICOLOR=1
 # export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -22,34 +16,34 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 # Java
 
 ##Java7
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/Home
-export PATH=$JAVA_HOME/bin:$PATH
+# export PATH=$JAVA_HOME/bin:$PATH
 # デフォルトエンコーディングSJISをUTF-8へ
-export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
+# export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 # haskell
-export PATH=/Users/ozaki/Library/Haskell/bin:$PATH
+# export PATH=/Users/ozaki/Library/Haskell/bin:$PATH
 
 # scala
-export SCALA_HOME=/Users/ozaki/.svm/current/rt
-PATH=$SCALA_HOME/bin:$PATH
-export SCALA_DOC_HOME=$SCALA_HOME/../devel-docs/api/
+# export SCALA_HOME=/Users/ozaki/.svm/current/rt
+# PATH=$SCALA_HOME/bin:$PATH
+# export SCALA_DOC_HOME=$SCALA_HOME/../devel-docs/api/
 
-export SCALA_CLASSPATH=~/sandbox/scala/yuroyoro/yuroyoro-util/target/yuroyoro-util-1.0.jar
+# export SCALA_CLASSPATH=~/sandbox/scala/yuroyoro/yuroyoro-util/target/yuroyoro-util-1.0.jar
 
 
 # Ant
-export ANT_VERSION=1.8.0
-export ANT_HOME=~/dev/Tools/apache-ant-${ANT_VERSION}
-export ANT_OPTS=-Xmx1g
-export PATH=$ANT_HOME/bin:$PATH
+# export ANT_VERSION=1.8.0
+# export ANT_HOME=~/dev/Tools/apache-ant-${ANT_VERSION}
+# export ANT_OPTS=-Xmx1g
+# export PATH=$ANT_HOME/bin:$PATH
 
 # Maven2
-export MAVEN_VERSION=2.2.1
-export MAVEN_HOME=~/dev/Tools/apache-maven-${MAVEN_VERSION}
-export PATH=$MAVEN_HOME/bin:$PATH
-export MAVEN_OPTS=-Xmx1024M
+# export MAVEN_VERSION=2.2.1
+# export MAVEN_HOME=~/dev/Tools/apache-maven-${MAVEN_VERSION}
+# export PATH=$MAVEN_HOME/bin:$PATH
+# export MAVEN_OPTS=-Xmx1024M
 
 
 # man path
@@ -59,33 +53,30 @@ INFOPATH=/usr/local/info:$INFOPATH
 export INFOPATH
 
 # Mysql
-export MYSQL_HOME=/usr/local/mysql
-export PATH=$MYSQL_HOME/bin:$PATH
-alias h2db='java -cp ~/.m2/repository/com/h2database/h2/1.1.112/h2-1.1.112.jar org.h2.tools.Server'
+# export MYSQL_HOME=/usr/local/mysql
+# export PATH=$MYSQL_HOME/bin:$PATH
+# alias h2db='java -cp ~/.m2/repository/com/h2database/h2/1.1.112/h2-1.1.112.jar org.h2.tools.Server'
 
 # STAX SDK
-export STAX_HOME=~/dev/Project/sandbox/stax-sdk-0.2.11
-export PATH=$PATH:$STAX_HOME
+# export STAX_HOME=~/dev/Project/sandbox/stax-sdk-0.2.11
+# export PATH=$PATH:$STAX_HOME
 
 # Adobe AIR
-export AIR_HOME=~/dev/air
-export FLEX_HOME=~/dev/flex
-export PATH=$PATH:$AIR_HOME/bin:$FLEX_HOME/bin
+# export AIR_HOME=~/dev/air
+# export FLEX_HOME=~/dev/flex
+# export PATH=$PATH:$AIR_HOME/bin:$FLEX_HOME/bin
 
 # Google App Engine SDK for python
-export GAE_SDK_VERSION=1.3.4
-GAE_SDK_INSTALLED_DIR=~/sandbox/GoogleAppEngine/sdk
-export GAE_HOME=$GAE_SDK_INSTALLED_DIR/$GAE_SDK_VERSION/google_appengine
-export PATH=$PATH:$GAE_HOME
+# export GAE_SDK_VERSION=1.3.4
+# GAE_SDK_INSTALLED_DIR=~/sandbox/GoogleAppEngine/sdk
+# export GAE_HOME=$GAE_SDK_INSTALLED_DIR/$GAE_SDK_VERSION/google_appengine
+# export PATH=$PATH:$GAE_HOME
 
 # Google App Engine SDK for java
-export GAEJ_SDK_VERSION=1.3.7
-GAEJ_SDK_INSTALLED_DIR=~/sandbox/GAEJava/sdk
-export GAEJ_HOME=$GAEJ_SDK_INSTALLED_DIR/appengine-java-sdk-$GAEJ_SDK_VERSION
-export PATH=$PATH:$GAEJ_HOME/bin
-
-# Perl
-alias perl='/opt/local/bin/perl'
+# export GAEJ_SDK_VERSION=1.3.7
+# GAEJ_SDK_INSTALLED_DIR=~/sandbox/GAEJava/sdk
+# export GAEJ_HOME=$GAEJ_SDK_INSTALLED_DIR/appengine-java-sdk-$GAEJ_SDK_VERSION
+# export PATH=$PATH:$GAEJ_HOME/bin
 
 # Python
 # alias python='/usr/local/bin/python'
@@ -102,25 +93,25 @@ alias perl='/opt/local/bin/perl'
 # if [[ -s /Users/ozaki/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 # eval "$(rbenv init -)"
 
-export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
+# export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
 
 # Go Lang
-export GOROOT=$HOME/dev/go
-export GOOS=darwin
-export GOARCH=386
-export PATH=$PATH:$GOROOT/bin
+# export GOROOT=$HOME/dev/go
+# export GOOS=darwin
+# export GOARCH=386
+# export PATH=$PATH:$GOROOT/bin
 
 # node.js
-export NODE_PATH=/usr/local/lib/node:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
+# export NODE_PATH=/usr/local/lib/node:$PATH
+# export PATH=/usr/local/share/npm/bin:$PATH
 
 # JRuby
-export JRUBY_HOME=$HOME/sandbox/jruby/jruby-1.5.2
-export PATH=$PATH:$JRUBY_HOME/bin
+# export JRUBY_HOME=$HOME/sandbox/jruby/jruby-1.5.2
+# export PATH=$PATH:$JRUBY_HOME/bin
 
 # Mirah
-export MIRAH_HOME=$HOME/sandbox/mirah/mirah
-export PATH=$PATH:$MIRAH_HOME/bin
+# export MIRAH_HOME=$HOME/sandbox/mirah/mirah
+# export PATH=$PATH:$MIRAH_HOME/bin
 
 # For Oracle
 # export DISPLAY=:0.0
@@ -136,10 +127,3 @@ export PATH=$PATH:$MIRAH_HOME/bin
 # export ORA_SDTZ=Japan
 
 # export PATH=$PATH:/$ORACLE_HOME/bin
-
-
-# tmux
-alias tmux='tmuxx'
-alias tm='tmuxx'
-alias tma='tmux attach'
-alias tml='tmux list-window'
