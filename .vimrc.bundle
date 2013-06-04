@@ -337,7 +337,7 @@ NeoBundle 'vim-scripts/dbext.vim'
 
 NeoBundle 'taichouchou2/vim-ref-ri'
 NeoBundle 'skwp/vim-rspec'
-NeoBundle 'kmnk/vim-unite-git'
+" NeoBundle 'kmnk/vim-unite-git'
 NeoBundle 'mattn/mkdpreview-vim'
 
 NeoBundle 'tangledhelix/vim-octopress.git'

@@ -710,3 +710,6 @@ esac
 # rbenv
 eval "$(rbenv init -)"
 
+# https://github.com/defunkt/hub
+eval "$(hub alias -s)"
+

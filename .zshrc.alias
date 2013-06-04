@@ -139,3 +139,6 @@ alias rtags='/usr/local/bin/ctags -R --langmap=RUBY:.rb --sort=yes /usr/local/Ce
 # 一括置換
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
+
+# gem spring
+alias s='spring'
