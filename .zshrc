@@ -496,6 +496,9 @@ export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
+# for postgres
+export PGDATA=/usr/local/var/postgres
+
 # for aws_tools
 export PATH=$HOME/aws_tools/bin/:$PATH
 
@@ -710,6 +713,7 @@ esac
 # rbenv
 eval "$(rbenv init -)"
 
-# https://github.com/defunkt/hub
-eval "$(hub alias -s)"
+# @see https://github.com/defunkt/hub
+# @see http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
+function git(){hub "$@"}
 
