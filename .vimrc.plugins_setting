@@ -321,19 +321,19 @@ autocmd User Rails call SetUpRailsSetting()
 " Shougo/neosnippet
 "------------------------------------
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
+" xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
 
 " SuperTab like snippets behavior.
 " imap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " smap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For snippet_complete marker.
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
+" if has('conceal')
+    " set conceallevel=2 concealcursor=i
+" endif
 
 " Tell Neosnippet about the other snippets
 " let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
@@ -371,10 +371,4 @@ let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
 "------------------------------------
 " ecomba/vim-ruby-refactoring
 "------------------------------------
-let g:ruby_refactoring_map_keys=1
-
-"------------------------------------
-" rsense
-"------------------------------------
-let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
-let g:rsenseUseOmniFunc = 1
+let g:endwise_no_mappings=1
