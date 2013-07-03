@@ -713,7 +713,11 @@ esac
 # rbenv
 eval "$(rbenv init -)"
 
+# hub command
 # @see https://github.com/defunkt/hub
+# `git` で `hub` 起動
 # @see http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
-function git(){hub "$@"}
-
+# local git==git
+# function git(){hub "$@"}
+# branchname=`${git} symbolic-ref --short HEAD 2> /dev/null`
+# 重くなるのでコメントアウト
