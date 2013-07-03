@@ -1,5 +1,6 @@
 "------------------------------------
 " neocomplcache
+" (neosnippet)
 "------------------------------------
 " 補完・履歴 neocomplcache "{{{
 set infercase
@@ -10,7 +11,7 @@ let g:neocomplcache_enable_at_startup = 1
  
 " default config"{{{
 let g:neocomplcache_force_overwrite_completefunc = 1
-let g:neocomplcache#sources#rsense#home_directory = expand('~/.bundle/rsense-0.3')
+let g:neocomplcache#sources#rsense#home_directory = expand('/usr/local/Cellar/rsense/0.3/libexec')
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_skip_auto_completion_time = '0.3'

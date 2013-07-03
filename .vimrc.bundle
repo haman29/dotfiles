@@ -158,10 +158,10 @@ endif
   NeoBundle 'Shougo/vimshell.git'
 
   " vim-altercmd : Ex command拡張
-  NeoBundle 'tyru/vim-altercmd'
+  " NeoBundle 'tyru/vim-altercmd'
 
   " vim Interface to Web API
-  NeoBundle 'mattn/webapi-vim'
+  " NeoBundle 'mattn/webapi-vim'
 
   " cecutil.vim : 他のpluginのためのutillity
   " NeoBundle 'cecutil'
@@ -212,35 +212,35 @@ endif
 " Unite {{{{
   " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
   NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'tsukkee/unite-help'
-  NeoBundle 'h1mesuke/unite-outline'
-  NeoBundle 'thinca/vim-unite-history'
-  NeoBundle 'tsukkee/unite-tag'
-  NeoBundle 'choplin/unite-vim_hacks'
+  " NeoBundle 'tsukkee/unite-help'
+  " NeoBundle 'h1mesuke/unite-outline'
+  " NeoBundle 'thinca/vim-unite-history'
+  " NeoBundle 'tsukkee/unite-tag'
+  " NeoBundle 'choplin/unite-vim_hacks'
 
 " }}}
 "  Oter{{{{
 
-NeoBundle 'honza/snipmate-snippets'
+" NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'ujihisa/unite-font'
-NeoBundle 'vim-scripts/svn-diff.vim'
+" NeoBundle 'vim-scripts/svn-diff.vim'
 NeoBundle 'ack.vim'
-NeoBundle 'wesleyche/SrcExpl'
-NeoBundle 'vim-scripts/Trinity'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/vim-metarw-simplenote'
+" NeoBundle 'wesleyche/SrcExpl'
+" NeoBundle 'vim-scripts/Trinity'
+" NeoBundle 'mattn/webapi-vim'
+" NeoBundle 'mattn/vim-metarw-simplenote'
 NeoBundle 'vim-scripts/sudo.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/gist-vim'
+" NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundle 'mattn/gist-vim'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'joonty/vim-xdebug.git'
+" NeoBundle 'joonty/vim-xdebug.git'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'mattn/excitetranslate-vim'
-NeoBundle 'vim-scripts/dbext.vim'
-NeoBundle 'mattn/mkdpreview-vim'
-NeoBundle 'tangledhelix/vim-octopress.git'
+" NeoBundle 'mattn/excitetranslate-vim'
+" NeoBundle 'vim-scripts/dbext.vim'
+" NeoBundle 'mattn/mkdpreview-vim'
+" NeoBundle 'tangledhelix/vim-octopress.git'
 
 "for rails @see http://qiita.com/alpaca_taichou/items/ab2ad83ddbaf2f6ce7fb {{{
 " コマンドを伴うやつの遅延読み込み
