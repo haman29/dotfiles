@@ -2,13 +2,13 @@
 # you can make as many tabs as you wish...
 
 project_name: Rails
-project_root: ~/hi
+project_root: /path/to/project_root
 tabs:
   - editor: vi -c "VimFilerExplorer"
   - console:
       layout: tiled
       panes:
-        - git pull
+        - git pull; open http://localhost:3000/
         - rails c
         - rails s
         - rails db
