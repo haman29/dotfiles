@@ -31,3 +31,6 @@ set ttyfast
 
 autocmd BufRead *.sql set filetype=mysql
 
+" for Debian
+" @see https://github.com/sigurdga/gnome-terminal-colors-solarized
+set t_Co=16

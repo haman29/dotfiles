@@ -9,7 +9,7 @@ endif
 
 if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
     !mkdir -p ~/.vim/bundle
-    !git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle.vim
+    !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     let s:bootstrap=1
 endif
 
