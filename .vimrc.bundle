@@ -50,7 +50,8 @@ endif
   " NeoBundle 'Gundo'
 
   " surround.vim : テキストを括弧で囲む／削除する
-  NeoBundle 'taichouchou2/surround.vim'
+  NeoBundle 'tpope/vim-surround'
+
 
   " smartchr.vim : ==などの前後を整形
   " NeoBundle 'smartchr'
@@ -313,7 +314,7 @@ endif
 " }}}
 "  Oter{{{{
 
-NeoBundle 'honza/snipmate-snippets'
+" NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'ujihisa/unite-font'
