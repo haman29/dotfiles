@@ -1,7 +1,12 @@
-
 # Terminal Colorの設定
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
+export LS_COLORS
+if [ -f ~/.dircolors ]; then
+    if type dircolors > /dev/null 2>&1; then
+        eval $(dircolors ~/.dircolors)
+    elif type gdircolors > /dev/null 2>&1; then
+        eval $(gdircolors ~/.dircolors)
+    fi
+fi
 
 alias ls='ls --color'
 # alias ls='ls -alh --color'
