@@ -3,9 +3,10 @@
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-alias ls='ls -alh --color'
-alias vi='/usr/local/bin/vim'
-alias vim='/usr/local/bin/vim'
+alias ls='ls --color'
+# alias ls='ls -alh --color'
+# alias vi='/usr/local/bin/vim'
+# alias vim='/usr/local/bin/vim'
 
 export PATH
 
