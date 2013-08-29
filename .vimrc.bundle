@@ -68,6 +68,7 @@ endif
 
   " ステータスラインをカッコよくする
   NeoBundle 'bling/vim-airline'
+  NeoBundle 'Lokaltog/powerline'
 
   " A framework to read/write fake:path
   NeoBundle 'kana/vim-metarw'
