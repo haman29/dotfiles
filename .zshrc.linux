@@ -12,6 +12,7 @@ alias ls='ls --color'
 # alias ls='ls -alh --color'
 # alias vi='/usr/local/bin/vim'
 # alias vim='/usr/local/bin/vim'
+alias pbcopy='xsel --clipboard --input'
 
 export PATH
 
