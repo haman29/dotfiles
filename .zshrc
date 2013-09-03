@@ -721,3 +721,6 @@ eval "$(rbenv init -)"
 # function git(){hub "$@"}
 # branchname=`${git} symbolic-ref --short HEAD 2> /dev/null`
 # 重くなるのでコメントアウト
+
+setopt auto_cd
+function chpwd() { ls }
