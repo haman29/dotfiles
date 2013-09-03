@@ -17,6 +17,8 @@ endif
 
   " text-object の拡張
   NeoBundle 'tpope/vim-surround'
+  NeoBundle 'kana/vim-textobj-user'
+  NeoBundle 'kana/vim-textobj-indent'
 
   " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
   NeoBundle 'scrooloose/nerdcommenter.git'
@@ -45,6 +47,12 @@ endif
   " perldocやphpmanual等のリファレンスをvim上で見る
   NeoBundle 'thinca/vim-ref'
 
+  """
+  " syntax
+  """
+  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+  NeoBundle 'scrooloose/syntastic'
+
   " エラーがある場所をhilight
   NeoBundle 'errormarker.vim'
 
@@ -54,8 +62,10 @@ endif
   " jQuery
   NeoBundle 'jQuery'
 
-  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
-  NeoBundle 'scrooloose/syntastic'
+
+
+  " coffee script
+  NeoBundle 'kchmck/vim-coffee-script'
 
   " vimshell : vimのshell
   NeoBundle 'Shougo/vimshell.git'
@@ -67,8 +77,8 @@ endif
   NeoBundle 'tpope/vim-fugitive'
 
   " ステータスラインをカッコよくする
-  NeoBundle 'bling/vim-airline'
-  NeoBundle 'Lokaltog/powerline'
+  " NeoBundle 'bling/vim-airline'
+  " NeoBundle 'Lokaltog/powerline'
 
   " A framework to read/write fake:path
   NeoBundle 'kana/vim-metarw'
@@ -89,6 +99,7 @@ endif
   NeoBundle 'vim-scripts/sudo.vim'
   NeoBundle 'tyru/open-browser.vim'
   NeoBundle 'Shougo/vimfiler'
+  NeoBundle 'tpope/vim-haml'
 
 " for rails plugin
 " @see http://qiita.com/alpaca_taichou/items/ab2ad83ddbaf2f6ce7fb {{{

@@ -504,6 +504,7 @@ export PATH=$HOME/aws_tools/bin/:$PATH
 
 # for local
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
 
 # for ignore bundle exec
 export PATH=./bin:$PATH
@@ -710,7 +711,8 @@ esac
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-# rbenv
+## rbenv settings
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # hub command

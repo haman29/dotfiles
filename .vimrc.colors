@@ -2,21 +2,16 @@
 " カラー関連 Colors
 "-------------------------------------------------------------------------------
 
-" colorscheme mrkn256
-" colorscheme yuroyoro256
-" set background=dark
-" colorscheme solarized
-colorscheme default
-
 if has('gui_running')
     set background=light
 else
     set background=dark
 endif
 
-let g:solarized_visibility = "low"
-let g:solarized_contrast = "low"
-colorscheme solarized
+" let g:solarized_visibility = "low"
+" let g:solarized_contrast = "low"
+" colorscheme solarized
+colorscheme default
 
 " ターミナルタイプによるカラー設定
 if &term =~ "xterm-256color" || "screen-256color"
