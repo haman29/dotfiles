@@ -8,11 +8,6 @@ else
     set background=dark
 endif
 
-" let g:solarized_visibility = "low"
-" let g:solarized_contrast = "low"
-" colorscheme solarized
-colorscheme default
-
 " ターミナルタイプによるカラー設定
 if &term =~ "xterm-256color" || "screen-256color"
   " 256色
@@ -28,6 +23,11 @@ elseif &term =~ "xterm-color"
   set t_Sf=[3%dm
   set t_Sb=[4%dm
 endif
+
+set term=screen-256color-bce
+let g:solarized_termcolors=256
+set t_Co=256
+colorscheme default
 
 "ポップアップメニューのカラーを設定
 "hi Pmenu guibg=#666666
