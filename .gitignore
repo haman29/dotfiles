@@ -37,8 +37,5 @@ samples
 # for aws
 /.elasticbeanstalk/
 
-# for LISTOR
-/smp
-/sms
-
-
+# for rails (バッドノウハウかも)
+/bin

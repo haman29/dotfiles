@@ -156,7 +156,7 @@ esac
 setopt auto_cd
 
 # cd 後に自動的に ls
-function chpwd() { ls }
+function chpwd() { ls --color }
 
 # cd でTabを押すとdir list を表示
 setopt auto_pushd
