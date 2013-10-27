@@ -127,3 +127,7 @@ export INFOPATH
 # export ORA_SDTZ=Japan
 
 # export PATH=$PATH:/$ORACLE_HOME/bin
+
+# haml
+# @see http://stackoverflow.com/questions/4975973/gem-update-unable-to-convert-xe7-to-utf-8-in-conversion-from-ascii-8bit-to-u
+export LC_CTYPE="utf-8"

@@ -1,0 +1,11 @@
+project_name: Rails
+project_root: ~/af
+tabs:
+  - editor: vi -c "VimFilerExplorer"
+  - console:
+      layout: tiled
+      panes:
+        - git pull
+        - rails c
+        - rails s
+  - test: guard

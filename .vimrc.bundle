@@ -8,256 +8,251 @@ if has('vim_starting')
 endif
 
 if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
-    !mkdir -p ~/.vim/bundle
-    !git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle.vim
-    let s:bootstrap=1
+  !mkdir -p ~/.vim/bundle
+  !git clone https://github.com/Shougo/neobundle.vim ~/.vim/neobundle.vim
+  let s:bootstrap=1
 endif
 
-  NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neobundle.vim'
 
-  " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
-  NeoBundle 'scrooloose/nerdcommenter.git'
+" NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
+NeoBundle 'scrooloose/nerdcommenter.git'
 
-  " ruby の コメント入力を素早く visual mode s# s=
-  NeoBundle 'tomtom/tcomment_vim'
+" Align : 高機能整形・桁揃えプラグイン
+NeoBundle 'Align'
 
-  " XMLとかHTMLとかの編集機能を強化する
-  NeoBundle 'xmledit'
+" マルチバイト対応の整形
+NeoBundle 'h1mesuke/vim-alignta'
 
-  " Align : 高機能整形・桁揃えプラグイン
-  NeoBundle 'Align'
+" surround.vim : テキストを括弧で囲む／削除する
+NeoBundle 'tpope/vim-surround'
 
-  " フィルタリングと整形
-  NeoBundle 'godlygeek/tabular'
+" vim-operator-user : 簡単にoperatorを定義できるようにする
+NeoBundle 'operator-user'
 
-  " マルチバイト対応の整形
-  NeoBundle 'h1mesuke/vim-alignta'
+" operator-camelize : camel-caseへの変換
+NeoBundle 'operator-camelize'
 
-  " YankRing.vim : ヤンクの履歴を管理し、順々に参照、出力できるようにする
-  " NeoBundle 'YankRing.vim'
+" operator-replace : yankしたものでreplaceする
+NeoBundle 'operator-replace'
 
-  " surround.vim : テキストを括弧で囲む／削除する
-  NeoBundle 'tpope/vim-surround'
+" textobj-user : 簡単にVimエディタのテキストオブジェクトをつくれる
+NeoBundle 'textobj-user'
 
-  " vim-operator-user : 簡単にoperatorを定義できるようにする
-  NeoBundle 'operator-user'
+" vim-textobj-syntax : syntax hilightされたものをtext-objectに
+NeoBundle 'kana/vim-textobj-syntax.git'
 
-  " operator-camelize : camel-caseへの変換
-  NeoBundle 'operator-camelize'
+" vim-textobj-plugins : いろんなものをtext-objectにする
+NeoBundle 'thinca/vim-textobj-plugins.git'
 
-  " operator-replace : yankしたものでreplaceする
-  NeoBundle 'operator-replace'
+" vim-textobj-lastpat : 最後に検索されたパターンをtext-objectに
+NeoBundle 'kana/vim-textobj-lastpat.git'
 
-  " textobj-user : 簡単にVimエディタのテキストオブジェクトをつくれる
-  NeoBundle 'textobj-user'
+" vim-textobj-indent : インデントされたものをtext-objectに
+NeoBundle 'kana/vim-textobj-indent.git'
 
-  " vim-textobj-syntax : syntax hilightされたものをtext-objectに
-  NeoBundle 'kana/vim-textobj-syntax.git'
+" vim-textobj-function : 関数の中身をtext-objectに
+NeoBundle 'kana/vim-textobj-function.git'
 
-  " vim-textobj-plugins : いろんなものをtext-objectにする
-  NeoBundle 'thinca/vim-textobj-plugins.git'
+NeoBundle 'textobj-rubyblock'
 
-  " vim-textobj-lastpat : 最後に検索されたパターンをtext-objectに
-  NeoBundle 'kana/vim-textobj-lastpat.git'
+" vim-textobj-entire : buffer全体をtext-objectに
+NeoBundle 'textobj-entire'
 
-  " vim-textobj-indent : インデントされたものをtext-objectに
-  NeoBundle 'kana/vim-textobj-indent.git'
+" 「foo」 or 【bar】などをtext-objectに
+NeoBundle 'textobj-jabraces'
 
-  " vim-textobj-function : 関数の中身をtext-objectに
-  NeoBundle 'kana/vim-textobj-function.git'
+if has("lua")
+  NeoBundleLazy 'Shougo/neocomplete', { 'autoload' : {
+        \ 'insert' : 1,
+        \ }}
+endif
 
-  " vim-textobj-fold : 折りたたまれたアレをtext-objectに
-  " NeoBundle 'kana/vim-textobj-fold.git'
-  NeoBundle 'textobj-rubyblock'
+" neocomplcacheのsinpet補完
+NeoBundleLazy 'Shougo/neosnippet', {
+      \ 'autoload' : {
+      \ 'commands' : ['NeoSnippetEdit', 'NeoSnippetSource'],
+      \ 'filetypes' : 'snippet',
+      \ 'insert' : 1,
+      \ 'unite_sources' : ['snippet', 'neosnippet/user', 'neosnippet/runtime'],
+      \ }}
 
-  " vim-textobj-entire : buffer全体をtext-objectに
-  NeoBundle 'textobj-entire'
+" rubyでrequire先を補完する
+NeoBundle 'ujihisa/neco-ruby'
 
-  " 「foo」 or 【bar】などをtext-objectに
-  NeoBundle 'textobj-jabraces'
+" A neocomplcache plugin for English, using look command
+NeoBundle 'ujihisa/neco-look'
 
-  " <C-a>でtrue/false切替。他色々
-  NeoBundle 'taku-o/vim-toggle'
+" vim-smartword : 単語移動がスマートな感じで
+NeoBundle 'smartword'
 
-  " 補完 neocomplcache.vim : 究極のVim的補完環境
-  NeoBundle 'Shougo/neocomplcache'
+" camelcasemotion : CamelCaseやsnake_case単位でのワード移動
+NeoBundle 'camelcasemotion'
 
-  " neocomplcacheのsinpet補完
-  NeoBundle 'Shougo/neosnippet'
+" matchit.vim : 「%」による対応括弧へのカーソル移動機能を拡張
+NeoBundle 'matchit.zip'
 
-  " for rsense
-  NeoBundle 'm2ym/rsense'
-  NeoBundle 'taichouchou2/vim-rsense'
+" grep.vim : 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
+NeoBundle 'grep.vim'
 
-  " rubyでrequire先を補完する
-  NeoBundle 'ujihisa/neco-ruby'
+" eregex.vim : vimの正規表現をrubyやperlの正規表現な入力でできる :%S/perlregex/
+NeoBundle 'eregex.vim'
 
-  " A neocomplcache plugin for English, using look command
-  NeoBundle 'ujihisa/neco-look'
+" open-browser.vim : カーソルの下のURLを開くor単語を検索エンジンで検索
+NeoBundle 'tyru/open-browser.vim'
 
-  " vim-smartword : 単語移動がスマートな感じで
-  NeoBundle 'smartword'
+" quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
+NeoBundle 'thinca/vim-quickrun'
 
-  " camelcasemotion : CamelCaseやsnake_case単位でのワード移動
-  NeoBundle 'camelcasemotion'
+" perldocやphpmanual等のリファレンスをvim上で見る
+NeoBundle 'thinca/vim-ref'
 
-  " <Leader><Leader>w/fなどで、motion先をhilightする
-  NeoBundle 'EasyMotion'
+" vim-ruby : VimでRubyを扱う際の最も基本的な拡張機能
+NeoBundle 'vim-ruby/vim-ruby'
 
-  " matchit.vim : 「%」による対応括弧へのカーソル移動機能を拡張
-  NeoBundle 'matchit.zip'
+" エラーがある場所をhilight
+NeoBundle 'errormarker.vim'
 
-  " ruby用のmatchit拡張
-  NeoBundle 'ruby-matchit'
+" JavaScript
+NeoBundle 'JavaScript-syntax'
 
-  " grep.vim : 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
-  NeoBundle 'grep.vim'
+" jQuery
+NeoBundle 'jQuery'
 
-  " eregex.vim : vimの正規表現をrubyやperlの正規表現な入力でできる :%S/perlregex/
-  NeoBundle 'eregex.vim'
+" markdown
+NeoBundle 'tpope/vim-markdown'
 
-  " open-browser.vim : カーソルの下のURLを開くor単語を検索エンジンで検索
-  NeoBundle 'tyru/open-browser.vim'
+" haml
+NeoBundle 'tpope/vim-haml'
 
-  " quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
-  NeoBundle 'thinca/vim-quickrun'
+" coffee script
+NeoBundle 'kchmck/vim-coffee-script'
 
-  " perldocやphpmanual等のリファレンスをvim上で見る
-  NeoBundle 'thinca/vim-ref'
+" python
+" NeoBundle 'yuroyoro/vim-python'
 
-  " vim-ruby : VimでRubyを扱う際の最も基本的な拡張機能
-  NeoBundle 'vim-ruby/vim-ruby'
+" scala
+" NeoBundle 'yuroyoro/vim-scala'
 
-  " rails.vim : rails的なアレ
-  NeoBundle 'tpope/vim-rails'
+" clojure
+" NeoBundle 'jondistad/vimclojure'
 
-  " エラーがある場所をhilight
-  NeoBundle 'errormarker.vim'
+" ghc-mod
+" NeoBundle 'eagletmt/ghcmod-vim'
 
-  " haml
-  NeoBundle 'haml.zip'
+" syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+NeoBundle 'scrooloose/syntastic'
 
-  " JavaScript
-  NeoBundle 'JavaScript-syntax'
+" vimの文字化け対策
+NeoBundle 'banyan/recognize_charcode.vim'
 
-  " jQuery
-  NeoBundle 'jQuery'
+" filer
+NeoBundle 'Shougo/vimfiler'
 
-  " markdown
-  NeoBundle 'tpope/vim-markdown'
+" vimshell : vimのshell
+NeoBundle 'Shougo/vimshell.git'
 
-  " coffee script
-  NeoBundle 'kchmck/vim-coffee-script'
-
-  " python
-  NeoBundle 'yuroyoro/vim-python'
-
-  " scala
-  NeoBundle 'yuroyoro/vim-scala'
-
-  " clojure
-  NeoBundle 'jondistad/vimclojure'
-
-  " ghc-mod
-  NeoBundle 'eagletmt/ghcmod-vim'
-
-  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
-  NeoBundle 'scrooloose/syntastic'
-
-  NeoBundle 'banyan/recognize_charcode.vim'
-
-  " vimshell : vimのshell
-  NeoBundle 'Shougo/vimshell.git'
-
-  " vimproc : vimから非同期実行。vimshelleで必要
-  NeoBundle 'Shougo/vimproc', {
+" vimproc : vimから非同期実行。vimshelleで必要
+NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
 
-  " vim-altercmd : Ex command拡張
-  NeoBundle 'tyru/vim-altercmd'
+" vim Interface to Web API
+NeoBundle 'mattn/webapi-vim'
 
-  " vim Interface to Web API
-  NeoBundle 'mattn/webapi-vim'
+" Buffer管理のLibrary
+NeoBundle 'thinca/vim-openbuf'
 
-  " cecutil.vim : 他のpluginのためのutillity
-  NeoBundle 'cecutil'
+" vimdoc 日本語
+NeoBundle 'yuroyoro/vimdoc_ja'
 
-  " urilib.vim : vim scriptからURLを扱うライブラリ
-  NeoBundle 'tyru/urilib.vim'
+" vimからGit操作する
+NeoBundle 'tpope/vim-fugitive'
 
-  " utillity
-  NeoBundle 'L9'
+" ステータスラインをカッコよくする
+NeoBundle 'Lokaltog/vim-powerline'
 
-  " Buffer管理のLibrary
-  NeoBundle 'thinca/vim-openbuf'
+" A framework to read/write fake:path
+NeoBundle 'kana/vim-metarw'
 
-  " vimdoc 日本語
-  NeoBundle 'yuroyoro/vimdoc_ja'
+" クリップボードを共有
+NeoBundle 'kana/vim-fakeclip'
 
-  " vimからGit操作する
-  NeoBundle 'tpope/vim-fugitive'
+" colorschema
+NeoBundle 'altercation/vim-colors-solarized'
 
-  " ステータスラインをカッコよくする
-  NeoBundle 'Lokaltog/vim-powerline'
-
-  " Redmine on Vim
-  NeoBundle 'mattn/vim-metarw-redmine'
-
-  " A framework to read/write fake:path
-  NeoBundle 'kana/vim-metarw'
-
-  " クリップボードを共有
-  NeoBundle 'kana/vim-fakeclip'
-
-  NeoBundle 'altercation/vim-colors-solarized'
-
-" Unite {{{{
-  " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'tsukkee/unite-help'
-  NeoBundle 'h1mesuke/unite-outline'
-  NeoBundle 'basyura/unite-rails'
-  NeoBundle 'ujihisa/unite-rake'
-  NeoBundle 'thinca/vim-unite-history'
-  NeoBundle 'tsukkee/unite-tag'
-  NeoBundle 'choplin/unite-vim_hacks'
-
-" }}}
-"  Oter{{{{
-
-NeoBundle 'mattn/zencoding-vim'
+" Unite
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tsukkee/unite-help'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'ujihisa/unite-rake'
+NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'choplin/unite-vim_hacks'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'ujihisa/unite-font'
-NeoBundle 'vim-scripts/svn-diff.vim'
+
+" zendcoding
+NeoBundle 'mattn/emmet-vim'
+
+" ack
 NeoBundle 'ack.vim'
-NeoBundle 'wesleyche/SrcExpl'
-NeoBundle 'vim-scripts/Trinity'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/vim-metarw-simplenote'
-NeoBundle 'vim-scripts/sudo.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'joonty/vim-xdebug.git'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'ecomba/vim-ruby-refactoring'
-NeoBundle 'mattn/excitetranslate-vim'
 
-NeoBundle 'ruby-matchit'
-NeoBundle 'vim-scripts/dbext.vim'
+" % 移動
+NeoBundleLazy 'edsono/vim-matchit', { 'autoload' : {
+      \ 'filetypes': 'ruby',
+      \ 'mappings' : ['nx', '%'] }}
 
-NeoBundle 'taichouchou2/vim-ref-ri'
-NeoBundle 'skwp/vim-rspec'
-NeoBundle 'mattn/mkdpreview-vim'
+" rails.vim
+NeoBundle 'tpope/vim-rails', { 'autoload' : {
+      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 
-"  }}}
+" vim-endwise
+NeoBundleLazy 'alpaca-tc/vim-endwise.git', {
+      \ 'autoload' : {
+      \ 'insert' : 1,
+      \ }}
+
+NeoBundleLazy 'basyura/unite-rails', {
+      \ 'depends' : 'Shougo/unite.vim',
+      \ 'autoload' : {
+      \ 'unite_sources' : [
+      \ 'rails/bundle', 'rails/bundled_gem', 'rails/config',
+      \ 'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
+      \ 'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
+      \ 'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
+      \ 'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/schema', 'rails/spec',
+      \ 'rails/stylesheet', 'rails/view'
+      \ ]
+      \ }}
+
+NeoBundleLazy 'taka84u9/vim-ref-ri', {
+      \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
+      \ 'autoload': { 'filetypes': g:my.ft.ruby_files } }NeoBundle 'skwp/vim-rspec'
+
+NeoBundleLazy 'alpaca-tc/neorspec.vim', {
+      \ 'depends' : ['alpaca-tc/vim-rails', 'tpope/vim-dispatch'],
+      \ 'autoload' : {
+      \ 'commands' : ['RSpec', 'RSpecAll', 'RSpecCurrent', 'RSpecNearest', 'RSpecRetry']
+      \ }}
+
+NeoBundleLazy 'alpaca-tc/alpaca_tags', {
+      \ 'depends': 'Shougo/vimproc',
+      \ 'autoload' : {
+      \ 'commands': ['TagsUpdate', 'TagsSet', 'TagsBundle']
+      \ }}
+
+NeoBundleLazy 'tsukkee/unite-tag', {
+      \ 'depends' : ['Shougo/unite.vim'],
+      \ 'autoload' : {
+      \ 'unite_sources' : ['tag', 'tag/file', 'tag/include']
+      \ }}
 
 if exists("s:bootstrap") && s:bootstrap
-    unlet s:bootstrap
-    BundleInstall
+  unlet s:bootstrap
+  BundleInstall
 endif
 
 filetype plugin indent on
