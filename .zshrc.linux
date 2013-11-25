@@ -13,6 +13,8 @@ alias ls='ls --color'
 # alias vi='/usr/local/bin/vim'
 # alias vim='/usr/local/bin/vim'
 alias pbcopy='xsel --clipboard --input'
+alias open='gnome-open'
+alias ack='ack-grep'
 
 export PATH
 

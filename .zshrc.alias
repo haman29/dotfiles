@@ -40,8 +40,8 @@ alias ccat='pygmentize -O style=vim -f console256 -g'
 alias less='less -r'
 
 # grep
-alias 'grep'='grep --color=auto -ERUIn'
-alias 'gr'='grep --color=auto -ERUIn'
+alias 'grep'='grep --color=auto -ERUI'
+alias 'gr'='grep --color=auto -ERUI'
 
 #make
 alias 'm'='make'

@@ -8,6 +8,7 @@
 *.sw[po]
 tags
 TAGS
+.ctags
 Session.vim
 .svn
 *.dSYM
@@ -39,3 +40,6 @@ samples
 
 # for rails (バッドノウハウかも)
 /bin
+
+# tmp directory
+tmp

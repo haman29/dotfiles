@@ -304,12 +304,6 @@ endfunction
 autocmd User Rails call SetUpRailsSetting()
 
 "------------------------------------
-" kana/vim-fakeclip
-"------------------------------------
-" yank/paste/delete でクリップボードを使う
-set clipboard=unnamed
-
-"------------------------------------
 " Shougo/vimfiler
 "------------------------------------
 let g:vimfiler_as_default_explorer = 1
@@ -342,3 +336,27 @@ let g:endwise_no_mappings=1
 " airline
 "------------------------------------
 " let g:airline_powerline_fonts = 1
+
+"------------------------------------
+" alpaca_tags
+"------------------------------------
+" 自身でオプションを作る
+" '_'では、デフォルトする設定を記述する
+let g:alpaca_tags_config = {
+      \ '_' : '-R --sort=yes --languages=+Ruby --languages=-css,scss,html',
+      \ 'js' : '--languages=+js',
+      \ 'ruby': '--languages=+Ruby',
+      \ }
+augroup AlpacaTags
+  autocmd!
+  if exists(':Tags')
+    autocmd BufWritePost Gemfile TagsBundle
+    autocmd BufEnter * TagsSet
+    " 毎回保存と同時更新する場合はコメントを外す
+    " autocmd BufWritePost * TagsUpdate
+  endif
+augroup END
+" ctagsのパスを設定
+" '/Applications/MacVim.app/Contents/MacOS/ctags'が存在する場合は自動設定
+let g:alpaca_tags_ctags_bin = './ctags'
+

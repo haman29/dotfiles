@@ -92,7 +92,7 @@ endif
   " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
   NeoBundle 'Shougo/unite.vim'
 
-  NeoBundle 'mattn/zencoding-vim'
+  NeoBundle 'mattn/emmet-vim'
   NeoBundle 'ujihisa/unite-colorscheme'
   NeoBundle 'ujihisa/unite-font'
   NeoBundle 'ack.vim'
@@ -124,6 +124,10 @@ NeoBundleLazy 'Shougo/neosnippet', {
       \   'insert' : 1,
       \ }}
 
+NeoBundleLazy 'edsono/vim-matchit', { 'autoload' : {
+      \ 'filetypes': 'ruby',
+      \ 'mappings' : ['nx', '%'] }}
+
 NeoBundle 'Shougo/neocomplcache-rsense', {
       \ 'depends': 'Shougo/neocomplcache',
       \ 'autoload': {
@@ -141,7 +145,17 @@ NeoBundleLazy 'ujihisa/unite-rake', {
       \ 'depends' : 'Shougo/unite.vim' }
 
 NeoBundleLazy 'basyura/unite-rails', {
-      \ 'depends' : 'Shougo/unite.vim' }
+      \ 'depends' : 'Shougo/unite.vim',
+      \ 'autoload' : {
+      \ 'unite_sources' : [
+      \ 'rails/bundle', 'rails/bundled_gem', 'rails/config',
+      \ 'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
+      \ 'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
+      \ 'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
+      \ 'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/schema', 'rails/spec',
+      \ 'rails/stylesheet', 'rails/view'
+      \ ]
+      \ }}
 
 NeoBundleLazy 'taichouchou2/unite-rails_best_practices', {
       \ 'depends' : 'Shougo/unite.vim',
@@ -166,6 +180,11 @@ NeoBundleLazy 'taichouchou2/alpaca_complete', {
       \    'unix': 'gem install alpaca_complete',
       \   }
       \ }
+NeoBundleLazy 'alpaca-tc/alpaca_tags', {
+      \ 'depends': 'Shougo/vimproc',
+      \ 'autoload' : {
+      \   'commands': ['TagsUpdate', 'TagsSet', 'TagsBundle']
+      \ }}
 
 let s:bundle_rails = 'unite-rails unite-rails_best_practices unite-rake alpaca_complete'
 
