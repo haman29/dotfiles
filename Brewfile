@@ -8,6 +8,7 @@ install binutils
 install git
 install gnu-sed
 install heroku-toolbelt
+install lua
 install openssl
 install postgresql
 install w3m
@@ -23,7 +24,7 @@ tap supermomonga/homebrew-splhack
 install --HEAD cmigemo-mk
 install --HEAD ctags-objc-ja
 install gettext-mk
-install --HEAD macvim-kaoriya
+install --HEAD macvim-kaoriya --with-lua
 linkapps
 
 # powerline用フォントを作成する
