@@ -152,7 +152,7 @@ NeoBundle 'Shougo/vimfiler'
 " vimshell : vimのshell
 NeoBundle 'Shougo/vimshell.git'
 
-" vimproc : vimから非同期実行。vimshelleで必要
+" vimproc : vimから非同期実行。vimshellで必要
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'mac' : 'make -f make_mac.mak',
@@ -230,7 +230,7 @@ NeoBundleLazy 'basyura/unite-rails', {
 
 NeoBundleLazy 'taka84u9/vim-ref-ri', {
       \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
-      \ 'autoload': { 'filetypes': g:my.ft.ruby_files } }NeoBundle 'skwp/vim-rspec'
+      \ 'autoload': { 'filetypes': g:my.ft.ruby_files } }
 
 NeoBundleLazy 'alpaca-tc/neorspec.vim', {
       \ 'depends' : ['alpaca-tc/vim-rails', 'tpope/vim-dispatch'],
@@ -239,16 +239,18 @@ NeoBundleLazy 'alpaca-tc/neorspec.vim', {
       \ }}
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
-      \ 'depends': 'Shougo/vimproc',
+      \ 'rev' : 'v2.0',
+      \ 'depends': ['Shougo/vimproc'],
       \ 'autoload' : {
-      \ 'commands': ['TagsUpdate', 'TagsSet', 'TagsBundle']
+      \   'commands' : ['AlpacaTagsSet', 'AlpacaTagsBundle', 'AlpacaTagsCleanCache', 'AlpacaTagsUpdate'],
       \ }}
-
 NeoBundleLazy 'tsukkee/unite-tag', {
       \ 'depends' : ['Shougo/unite.vim'],
       \ 'autoload' : {
       \ 'unite_sources' : ['tag', 'tag/file', 'tag/include']
       \ }}
+
+NeoBundle 'terryma/vim-multiple-cursors'
 
 if exists("s:bootstrap") && s:bootstrap
   unlet s:bootstrap
