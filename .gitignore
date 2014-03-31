@@ -28,15 +28,5 @@ samples
 !.vimperator/info/default/quickmarks
 .vimperator/plugin/
 
-# for automation php unit test
-/composer.json
-/composer.lock
-/composer.phar
-/vendor/
-
-# for aws
-/.elasticbeanstalk/
-
-# for LISTOR
-/smp
-/sms
+# for rbenv
+.ruby-version
