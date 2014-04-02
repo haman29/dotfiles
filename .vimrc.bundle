@@ -186,6 +186,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 " Unite
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'ujihisa/unite-rake'
