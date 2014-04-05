@@ -48,10 +48,23 @@ bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 function history-all { history -E 1}   # 履歴の一覧を出力
 
+## LSCOLORS
 export LSCOLORS=ExFxCxdxBxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
+# dircolors-solarized
+# ref: http://memo.xight.org/2013-09-18-2
+if [[ -x /usr/local/bin/gls ]]; then
+  alias ls="gls --color=auto -FG"
+fi
+if [[ -x /usr/local/bin/gdircolors ]]; then
+  alias dircolors="gdircolors"
+fi
+if [[ -r $ZDOTDIR/modules/dircolors-solarized/dircolors.256dark ]]; then
+  eval `dircolors $ZDOTDIR/modules/dircolors-solarized/dircolors.256dark`
+fi
+
 ## Options
 setopt auto_list              # 補完候補を一覧で表示
 setopt auto_param_slash       # 補完候補がディレクトリの場合, 末尾に / を追加
@@ -166,17 +179,6 @@ alias vi=vim
 alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
 alias gvi=gvim
 PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
-# dircolors-solarized
-# ref: http://memo.xight.org/2013-09-18-2
-if [[ -x /usr/local/bin/gls ]]; then
-  alias ls="gls --color=auto -FG"
-fi
-if [[ -x /usr/local/bin/gdircolors ]]; then
-  alias dircolors="gdircolors"
-fi
-if [[ -r $ZDOTDIR/modules/dircolors-solarized/dircolors.256dark ]]; then
-  eval `dircolors $ZDOTDIR/modules/dircolors-solarized/dircolors.256dark`
-fi
 
 ##
 if [ ! -f $ZDOTDIR/.zshenv.zwc -o $ZDOTDIR/.zshenv -nt $ZDOTDIR/.zshenv.zwc ]; then
