@@ -79,13 +79,15 @@ zstyle ':completion:*' remote-access true
 zstyle ':completion:*' completer \
     _oldlist _complete _match _ignored _approximate _list _history
 ## 補完候補の追加
-[ -d $ZDOTDIR/modules/completions ] && \
+[ -d $ZDOTDIR/modules/zsh-completions ] && \
     fpath+=( $ZDOTDIR/modules/zsh-completions/src $fpath)
-# [ -d $ZDOTDIR/functions ] && \
-#   fpath+=( $ZDOTDIR/functions $fpath)
-typeset -gxU fpath
-# autoload $ZDOTDIR/functions/*.zsh
+autoload -U compinit
+compinit -u
+## コマンドの有無で色づけ
+[ -d $ZDOTDIR/modules/zsh-syntax-highlighting ] && \
+    source $ZDOTDIR/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # 初期化
+typeset -gxU fpath
 
 setopt prompt_subst      # プロンプト定義内で変数置換やコマンド置換を扱う
 setopt prompt_percent    # %文字から始まる置換機能を有効に

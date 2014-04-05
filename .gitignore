@@ -30,3 +30,7 @@ samples
 .ruby-version
 
 tags
+
+# zsh
+/.zsh/.zcompdump
+/.zsh/.*.zwc
