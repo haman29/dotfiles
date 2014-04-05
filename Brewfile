@@ -5,6 +5,8 @@ tap phinze/homebrew-cask
 install ack
 install autoconf
 install binutils
+install ctags
+install nkf
 install git
 install gnu-sed
 install heroku-toolbelt
@@ -14,6 +16,7 @@ install postgresql
 install w3m
 install wget
 install tmux
+install tree
 # zshは/etcを参照しないようにする(参考：brew info zsh)
 install zsh --disable-etcdir
 install fontforge
@@ -35,12 +38,12 @@ install --powerline --vim-powerline ricty
 install brew-cask
 cask install dropbox
 cask install google-chrome
+cask install firefox
 cask install skype
 cask install vagrant
 cask install virtualbox
 cask install hipchat
 cask install iterm2
-cask install kobito
 cask install bettertouchtool
 cask install alfred
 cask alfred link
