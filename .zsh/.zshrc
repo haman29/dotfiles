@@ -153,19 +153,32 @@ whence vim >/dev/null && alias vi=vim
 export EDITOR=vi
 
 ## ls
-alias sl='ls'  #fxxk!!
+# Basic
 export TIME_STYLE=long-iso
 export LS_OPTIONS="-N -T 0 --time-style=$TIME_STYLE"
-alias ls='ls -FG'
 alias la='ls -haFG'
 alias ll='ls -hlFG'
 alias lla='ls -hlaFG'
-alias lsd='ls -ld *(-/DN)'
+alias lld='ls -ld *(-/DN)'
 alias man='LANG=C man'
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi=vim
+alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
+alias gvi=gvim
 PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
+# dircolors-solarized
+# ref: http://memo.xight.org/2013-09-18-2
+if [[ -x /usr/local/bin/gls ]]; then
+  alias ls="gls --color=auto -FG"
+fi
+if [[ -x /usr/local/bin/gdircolors ]]; then
+  alias dircolors="gdircolors"
+fi
+if [[ -r $ZDOTDIR/modules/dircolors-solarized/dircolors.256dark ]]; then
+  eval `dircolors $ZDOTDIR/modules/dircolors-solarized/dircolors.256dark`
+fi
 
+##
 if [ ! -f $ZDOTDIR/.zshenv.zwc -o $ZDOTDIR/.zshenv -nt $ZDOTDIR/.zshenv.zwc ]; then
   zcompile $ZDOTDIR/.zshenv
 fi

@@ -5,6 +5,7 @@ tap phinze/homebrew-cask
 install ack
 install autoconf
 install binutils
+install coreutils
 install ctags
 install nkf
 install git
