@@ -34,3 +34,4 @@ tags
 # zsh
 /.zsh/.zcompdump
 /.zsh/.*.zwc
+/.zsh/history/

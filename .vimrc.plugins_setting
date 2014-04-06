@@ -16,24 +16,6 @@ let NERDSpaceDelims = 1
 ""未対応ファイルタイプのエラーメッセージを表示しない
 let NERDShutUp=1
 
-" ------------------------------------
-" grep.vim
-"------------------------------------
-" 検索外のディレクトリ、ファイルパターン
-let Grep_Skip_Dirs = '.svn .git .hg'
-let Grep_Skip_Files = '*.bak *~'
-
-"------------------------------------
-" Fugitive.vim
-"------------------------------------
-nnoremap <Space>gd :<C-u>Gdiff<Enter>
-nnoremap <Space>gs :<C-u>Gstatus<Enter>
-nnoremap <Space>gl :<C-u>Glog<Enter>
-nnoremap <Space>ga :<C-u>Gwrite<Enter>
-nnoremap <Space>gc :<C-u>Gcommit<Enter>
-nnoremap <Space>gC :<C-u>Git commit --amend<Enter>
-nnoremap <Space>gb :<C-u>Gblame<Enter>
-
 "------------------------------------
 " open-blowser.vim
 "------------------------------------
@@ -255,20 +237,8 @@ let g:quickrun_config['coffee'] = {'command' : 'coffee'}
 let g:syntastic_enable_signs = 1
 " 可能ならhighligt表示する
 let g:syntastic_enable_highlighting = 1
-" let g:syntastic_quiet_warnings = 0
 " :SyntasticCheck で起動
-let g:syntastic_mode_map = { 'mode': 'passive' }
-
-" rubocop
-" let g:syntastic_ruby_checkers = ['rubocop']
-
-"------------------------------------
-" toggle.vim
-"------------------------------------
-imap <C-S-t> <Plug>ToggleI
-nmap <C-S-t> <Plug>ToggleN
-vmap <C-S-t> <Plug>ToggleV
-let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'yes':'no', 'no':'yes', 'enable':'disable', 'disable':'enable', 'pick':'reword', 'reword':'fixup', 'fixup':'squash', 'squash':'edit', 'edit':'exec', 'exec':'pick' }
+" let g:syntastic_mode_map = { 'mode': 'passive' }
 
 "------------------------------------
 " vim-rails.vim
@@ -333,19 +303,6 @@ let g:ref_refe_version = 2
 
 " php reference
 let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
-
-"------------------------------------
-" AlpacaTags
-"------------------------------------
-augroup AlpacaTags
-  autocmd!
-  if exists(':Tags')
-    autocmd BufWritePost Gemfile TagsBundle
-    autocmd BufEnter * TagsSet
-    " 毎回保存と同時更新する場合はコメントを外す
-    " autocmd BufWritePost * TagsUpdate
-  endif
-augroup END
 
 "------------------------------------
 " endwise.vim

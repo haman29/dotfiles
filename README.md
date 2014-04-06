@@ -45,4 +45,8 @@ $ ln -s ~/dotfiles/.vimrc ~/
 $ ln -s ~/dotfiles/.giconfig ~/
 $ ln -s ~/dotfiles/.gitignore ~/
 ```
-##
+## Tmux
+```
+$ ln -s ~/dotfiles/.tmux.conf ~/
+$ ln -s ~/dotfiles/.tmuxinator ~/
+```

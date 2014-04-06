@@ -1,9 +1,8 @@
 "-------------------------------------------------------------------------------
 " カラー関連 Colors
 "-------------------------------------------------------------------------------
+syntax enable
 
-" colorscheme mrkn256
-" colorscheme yuroyoro256
 set background=dark
 colorscheme solarized
 
@@ -28,8 +27,6 @@ endif
 "hi PmenuSel guibg=#8cd0d3 guifg=#666666
 "hi PmenuSbar guibg=#333333
 
-" ハイライト on
-syntax enable
 " 補完候補の色づけ for vim7
 " hi Pmenu ctermbg=255 ctermfg=0 guifg=#000000 guibg=#999999
 " hi PmenuSel ctermbg=blue ctermfg=black
