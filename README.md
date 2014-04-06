@@ -31,3 +31,12 @@ $ brew bundle ~/dotfiles/Brewfile
 $ ln -s ~/dotfiles/.zshenv .zshenv
 # restart zsh
 ```
+## anyenv
+```
+$ ln -s ~/dotfiles/anyenv ~/.anyenv
+$ anyenv install rbenv
+```
+## Vim
+```
+$ ln -s ~/dotfiles/.vimrc ~/
+```

@@ -4,6 +4,7 @@
 export LANG=ja_JP.UTF-8
 
 path=(
+  $HOME/.anyenv/bin
   {/usr/local,/usr,}{/bin,/sbin}(N-/)
 )
 typeset -gxU path

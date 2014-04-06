@@ -193,3 +193,6 @@ fi
 function chpwd() { ls }
 # 上書きリダイレクトの禁止
 setopt no_clobber
+
+# anyenv
+eval "$(anyenv init -)"
