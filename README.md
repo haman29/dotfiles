@@ -40,3 +40,9 @@ $ anyenv install rbenv
 ```
 $ ln -s ~/dotfiles/.vimrc ~/
 ```
+## git
+```
+$ ln -s ~/dotfiles/.giconfig ~/
+$ ln -s ~/dotfiles/.gitignore ~/
+```
+##
