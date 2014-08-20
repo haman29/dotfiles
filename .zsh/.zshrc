@@ -1,7 +1,5 @@
 #! /usr/bin/env zsh
 
-# ref: http://qiita.com/daxanya1/items/d237eb3dc4f5d8cdad9c
-
 umask 022                   # default umask
 bindkey -e                  # keybind  -> emacs like
 setopt no_beep              # beep を無効化
@@ -166,7 +164,7 @@ whence vim >/dev/null && alias vi=vim
 export EDITOR=vi
 
 ## ls
-# Basic
+# ref: http://qiita.com/daxanya1/items/d237eb3dc4f5d8cdad9c
 export TIME_STYLE=long-iso
 export LS_OPTIONS="-N -T 0 --time-style=$TIME_STYLE"
 alias la='ls -haFG'
@@ -174,11 +172,6 @@ alias ll='ls -hlFG'
 alias lla='ls -hlaFG'
 alias lld='ls -ld *(-/DN)'
 alias man='LANG=C man'
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi=vim
-alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
-alias gvi=gvim
-PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
 
 ##
 if [ ! -f $ZDOTDIR/.zshenv.zwc -o $ZDOTDIR/.zshenv -nt $ZDOTDIR/.zshenv.zwc ]; then
@@ -193,6 +186,16 @@ fi
 function chpwd() { ls }
 # 上書きリダイレクトの禁止
 setopt no_clobber
+# 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
+setopt auto_cd
 
 # anyenv
 eval "$(anyenv init -)"
+
+
+# alias
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias vi=vim
+alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
+alias gvi=gvim
+PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
