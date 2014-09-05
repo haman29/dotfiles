@@ -11,7 +11,7 @@ setopt pushd_ignore_dups    # ディレクトリスタックに重複する物�
 DIRSTACKSIZE=20
 limit coredumpsize 0
 
-setopt correct              # コマンドのスペル訂正
+# setopt correct              # コマンドのスペル訂正
 setopt rc_quotes            # '' で ' を表現(エスケープをちょっとだけ省く)
 unsetopt correct_all        # 全ての引数のスペル訂正: 無効化
 
@@ -199,3 +199,10 @@ alias vi=vim
 alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
 alias gvi=gvim
 PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
+
+# for go lang
+if [ -x "`which go`" ]; then
+  export GOROOT=`go env GOROOT`
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi

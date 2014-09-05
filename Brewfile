@@ -10,6 +10,7 @@ install ctags
 install nkf
 install git
 install gnu-sed
+install go
 install heroku-toolbelt
 install lua
 install openssl
