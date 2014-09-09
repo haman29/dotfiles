@@ -726,3 +726,5 @@ eval "$(rbenv init -)"
 # function git(){hub "$@"}
 # branchname=`${git} symbolic-ref --short HEAD 2> /dev/null`
 # 重くなるのでコメントアウト
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

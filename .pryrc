@@ -1,15 +1,19 @@
+## Settings
+Pry.config.color = true
+Pry.config.editor = "vim" 
+
+# hirb
 begin
-  require 'awesome_print'
+  require 'awesome_print' 
   Pry.config.print = proc { |output, value| output.puts value.ai }
 rescue LoadError => err
-  puts "no awesome_print :("
+  puts "no awesome_print :(" 
 end
 
 begin
   require 'hirb'
 rescue LoadError
   # Missing goodies, bummer
-  puts "no hirb :("
 end
 
 if defined? Hirb

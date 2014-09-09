@@ -68,7 +68,7 @@ endif
   NeoBundle 'kchmck/vim-coffee-script'
 
   " vimshell : vimのshell
-  NeoBundle 'Shougo/vimshell.git'
+  " NeoBundle 'Shougo/vimshell.git'
 
   " vimdoc 日本語
   NeoBundle 'yuroyoro/vimdoc_ja'
@@ -100,6 +100,7 @@ endif
   NeoBundle 'tyru/open-browser.vim'
   NeoBundle 'Shougo/vimfiler'
   NeoBundle 'tpope/vim-haml'
+  NeoBundle 'slim-template/vim-slim'
 
 " for rails plugin
 " @see http://qiita.com/alpaca_taichou/items/ab2ad83ddbaf2f6ce7fb {{{

@@ -142,3 +142,5 @@ alias zmv='noglob zmv -W'
 
 # gem spring
 # alias s='spring'
+
+alias rmcf='echo "rm -f public/javascripts/cache_* public/stylesheets/cache_*"; rm -f public/javascripts/cache_* public/stylesheets/cache_*'

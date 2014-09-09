@@ -43,3 +43,7 @@ samples
 
 # tmp directory
 tmp
+.rvmrc
+
+/public/javascripts/*
+/public/stylesheets/*

@@ -26,7 +26,9 @@
   rebase = true
 [alias]
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-  s = status --short --branch
+  s   = status --short --branch
+  ss  = stash
+  sp  = stash pop
   st  = status
   sh  = show
   so  = remote show origin
