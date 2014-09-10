@@ -47,3 +47,6 @@ tmp
 
 /public/javascripts/*
 /public/stylesheets/*
+
+# drc (bad know-how)
+/config/initializers/sidekiq.rb

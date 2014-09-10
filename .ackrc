@@ -18,3 +18,4 @@ rdoc=.rdoc
 --actionscript
 --objc
 --ignore-dir=.idea
+--ignore-dir=tmp

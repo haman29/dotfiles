@@ -1,13 +1,11 @@
 # users generic .zshrc file for zsh(1)
 
-
 ## Environment variable configuration
 #
 # LANG
 # http://curiousabt.blog27.fc2.com/blog-entry-65.html
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
-
 
 ## Backspace key
 #
@@ -376,16 +374,13 @@ fpath=(~/dotfiles/zsh-completions/src ${fpath})
 autoload -U compinit
 compinit -u
 
-
 ## zsh-syntax-highlighting
 #
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
 ## zsh editor
 #
 autoload zed
-
 
 ## Prediction configuration
 #
@@ -394,7 +389,6 @@ autoload predict-on
 
 ## Command Line Stack [Esc]-[q]
 bindkey -a 'q' push-line
-
 
 ## Alias configuration
 #
@@ -414,7 +408,6 @@ linux*)
     alias la="ls -al"
     ;;
 esac
-
 
 case "${OSTYPE}" in
 # MacOSX
@@ -442,7 +435,6 @@ freebsd*)
     esac
     ;;
 esac
-
 
 ## terminal configuration
 # http://journal.mycom.co.jp/column/zsh/009/index.html
@@ -655,7 +647,6 @@ bindkey "^x " no-magic-abbrev-expand
     # afu-ad-delete-unambiguous-prefix afu+accept-and-hold
 # fi
 
-
 function rmf(){
    for file in $*
    do
@@ -709,7 +700,6 @@ linux*)
     ;;
 esac
 
-
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
@@ -727,4 +717,14 @@ eval "$(rbenv init -)"
 # branchname=`${git} symbolic-ref --short HEAD 2> /dev/null`
 # 重くなるのでコメントアウト
 
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# for go lang
+if [ -x "`which go`" ]; then
+  export GOROOT=/usr/local/lib/go
+  export GOPATH=$HOME/go
+  export GOARCH=amd64
+  export GOOS=linux
+  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+fi
