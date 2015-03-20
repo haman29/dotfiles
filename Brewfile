@@ -50,3 +50,7 @@ cask install bettertouchtool
 cask install alfred
 cask alfred link
 cask install KeyRemap4MacBook
+cask install graphviz
+cask install mysql
+cask install pkg-config
+cask install imagemagick

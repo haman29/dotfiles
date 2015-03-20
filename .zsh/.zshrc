@@ -199,6 +199,9 @@ alias vi=vim
 alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
 alias gvi=gvim
 PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
+PATH=$PATH:$HOME/bin
+
+alias g=git
 
 # for go lang
 if [ -x "`which go`" ]; then
@@ -206,3 +209,49 @@ if [ -x "`which go`" ]; then
   export GOPATH=$HOME/go
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
+
+### peco
+# history filter
+# http://qiita.com/uchiko/items/f6b1528d7362c9310da0
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history # C-rに割り当て
+
+# cdr
+autoload -Uz is-at-least
+if is-at-least 4.3.11
+then
+  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+  add-zsh-hook chpwd chpwd_recent_dirs
+  zstyle ':chpwd:*' recent-dirs-max 5000
+  zstyle ':chpwd:*' recent-dirs-default yes
+  zstyle ':completion:*' recent-dirs-insert both
+fi
+function peco-cdr () {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-cdr
+
+# kill process
+function peco-kill-process () {
+    ps -ef | peco | awk '{ print $2 }' | xargs kill
+    zle clear-screen
+}
+zle -N peco-kill-process

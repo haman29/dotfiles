@@ -142,3 +142,4 @@ alias zmv='noglob zmv -W'
 
 # gem spring
 # alias s='spring'
+alias g='git'
