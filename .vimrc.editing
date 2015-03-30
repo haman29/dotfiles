@@ -102,3 +102,6 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " コピーした文字で、繰り返し上書きペーストする
 vnoremap <silent> <C-p> "0p<CR>
+
+" gfでの拡張子追加
+" set suffixesadd=.js

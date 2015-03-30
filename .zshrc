@@ -728,3 +728,53 @@ if [ -x "`which go`" ]; then
   export GOOS=linux
   export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 fi
+
+# history filter
+# http://qiita.com/uchiko/items/f6b1528d7362c9310da0
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+# kill process
+function peco-kill-process () {
+    ps -ef | peco | awk '{ print $2 }' | xargs kill
+}
+
+# peco で絞り込んで指定行をvimで開く
+function peco-ag-vim () {
+  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+function peco-cd-gem() {
+  local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
+  if [ -n "$gem_name" ]; then
+    local gem_dir=$(bundle show ${gem_name})
+    echo "cd to ${gem_dir}"
+    cd ${gem_dir}
+  fi
+}
+################################################################################
+# rake-routes-peco
+################################################################################
+peco-routes() {
+  rake --help > /dev/null 2>&1
+  if [[ $? == 0 ]]; then
+    BUFFER="$(rake routes | peco --query "$LBUFFER")"
+    CURSOR=$#BUFFER
+  fi
+}
+
+# rbenvが優先になるケースがある。暫定対応。
+unset RBENV_VERSION

@@ -50,3 +50,7 @@ tmp
 
 # drc (bad know-how)
 /config/initializers/sidekiq.rb
+
+# atodeけす
+test/s3_assets/drc-staging-test1/test_hamada/
+

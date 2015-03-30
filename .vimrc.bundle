@@ -91,6 +91,8 @@ endif
 
   " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
   NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'Shougo/unite-outline'
 
   NeoBundle 'mattn/emmet-vim'
   NeoBundle 'ujihisa/unite-colorscheme'
@@ -208,6 +210,9 @@ NeoBundleLazy 'skwp/vim-rspec', {
       \ 'autoload': { 'filetypes': ['ruby', 'eruby', 'haml'] } }
 NeoBundleLazy 'ruby-matchit', {
       \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
+
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'rking/ag.vim'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap

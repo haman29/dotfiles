@@ -164,6 +164,10 @@ nnoremap <silent> [unite]m  :<C-u>Unite -no-split file_mru<CR>
 nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split file<CR>
 
 " nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
+
+" 改善の余地あり...
+call unite#custom#source('file_rec/async', 'ignore_pattern', 'vendor\|tmp')
 
 let g:yankring_zap_keys = ""
 " from basyura/unite-rails
@@ -199,9 +203,46 @@ endfunction"}}}
 
 let g:unite_source_file_mru_limit = 200
 
+
 " unite-plugins
 cnoremap UH Unite help<Enter>
 cnoremap UO Unite outline<Enter>
+
+" Unite grep
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+" insert modeで開始
+" let g:unite_enable_start_insert = 1
+" grep検索
+" nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+" nnoremap <silent> ,gw :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+
+" unite-grep-quickfix {{{ 
+" let s:unite_grep_quickfix = { 'name': 'grep-quickfix', 'is_volatile': 1 } 
+" function! s:unite_grep_quickfix.gather_candidates(args, context) 
+  " execute printf("vimgrep /%s/jg %s", a:context.input, get(a:args, 0, "**")) 
+  " let l:res = [] 
+  " for l:val in getqflist() 
+    " let name = bufname(l:val.bufnr) 
+    " let dict = { 
+          " \ 'word': printf("%s|%d:%d|%s", name, l:val.lnum, l:val.col, matchstr(l:val.text, '\s*\zs.*\S')), 
+          " \ 'source': 'grep-quickfix', 
+          " \ "kind": "jump_list", 
+          " \ 'action__path': name, 
+          " \ 'action__line': l:val.lnum, 
+          " \ 'action__pattern': l:val.pattern 
+          " \} 
+    " call add(res, dict) 
+  " endfor 
+ 
+  " return l:res 
+" endfunction 
+" call unite#define_source(s:unite_grep_quickfix) 
+" }}} 
 
 "------------------------------------
 " quickrun.vim
@@ -359,4 +400,7 @@ augroup END
 " ctagsのパスを設定
 " '/Applications/MacVim.app/Contents/MacOS/ctags'が存在する場合は自動設定
 let g:alpaca_tags_ctags_bin = './ctags'
+
+" ackvim ubuntu対応
+let g:ackprg = 'ack-grep -H --nocolor --nogroup --column'
 
