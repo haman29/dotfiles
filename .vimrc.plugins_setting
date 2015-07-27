@@ -404,3 +404,8 @@ let g:alpaca_tags_ctags_bin = './ctags'
 " ackvim ubuntu対応
 let g:ackprg = 'ack-grep -H --nocolor --nogroup --column'
 
+
+" ag
+" --- type ° to search the word in all files in the current dir
+" nmap  :Ag <c-r>=expand("<cword>")<cr><cr>
+nnoremap <space>/ :Ag 

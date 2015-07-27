@@ -705,8 +705,8 @@ esac
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 ## rbenv settings
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # hub command
 # @see https://github.com/defunkt/hub

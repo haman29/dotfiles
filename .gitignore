@@ -54,3 +54,4 @@ tmp
 # atodeけす
 test/s3_assets/drc-staging-test1/test_hamada/
 
+config/initializers/session_store.rb
