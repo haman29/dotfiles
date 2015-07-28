@@ -8,8 +8,7 @@
       - homebrew/dupes
       - caskroom/cask
       - sanemat/font
-      - supermomonga/homebrew-splhack
-      # - railwaycat/emacsmacport
+      # - splhack/homebrew-splhack
     homebrew_packages:
       - { name: readline }
       - { name: openssl }
@@ -47,6 +46,15 @@
       - { name: autojump }
       - { name: gibo }
       - { name: source-highlight }
+      - { name: cmigemo-mk }
+      - { name: ctags-objc-ja }
+      - { name: gettext-mk }
+      - { name: lua }
+      - { name: lua51 }
+      - { name: luajit }
+      - { name: python3 }
+      - { name: ruby }
+      - { name: macvim-kaoriya, install_options: HEAD }
       # - { name: direnv }
       # - { name: tig }
       # - { name: fish }
@@ -58,7 +66,6 @@
       # - { name: socat }
       # - { name: rlwrap }
     homebrew_cask_packages:
-      - { name: macvim-kaoriya }
       - { name: iterm2 }
       - { name: firefox }
       - { name: google-chrome }
@@ -74,6 +81,8 @@
       - { name: kobito }
       - { name: vagrant }
       - { name: virtualbox }
+      - { name: dropbox }
+      - { name: bettertouchtool }
       # - { name: emacs-mac }
       # - { name: skype }
       # - { name: sourcetree }
@@ -108,6 +117,9 @@
     - name: brew パッケージの情報を保存
       shell: brew info {{ item }} > brew_info/{{ item }}
       with_items: brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
+    - name: linkapps
+      shell: brew linkapps
+
 
     # cask
     - name: homebrew-cask のインストール
