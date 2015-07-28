@@ -15,6 +15,7 @@ if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
   let s:bootstrap=1
 endif
 
+call neobundle#begin(expand('~/.vim/bundle/'))
 " vim plugin 管理
 NeoBundle 'Shougo/neobundle.vim'
 
@@ -136,6 +137,8 @@ NeoBundle 'briancollins/vim-jst'
 
 " SublimeTextライクな置換
 " NeoBundle 'terryma/vim-multiple-cursors'
+
+call neobundle#end()
 
 if exists("s:bootstrap") && s:bootstrap
   unlet s:bootstrap

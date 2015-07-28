@@ -83,6 +83,7 @@
       - { name: virtualbox }
       - { name: dropbox }
       - { name: bettertouchtool }
+      - { name: chefdk }
       # - { name: emacs-mac }
       # - { name: skype }
       # - { name: sourcetree }
