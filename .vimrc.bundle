@@ -133,6 +133,8 @@ NeoBundle 'tpope/vim-rails', { 'autoload' : {
 NeoBundle 'alpaca-tc/vim-endwise.git'
 
 NeoBundle 'briancollins/vim-jst'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'itchyny/lightline.vim'
 
 
 " SublimeTextライクな置換
