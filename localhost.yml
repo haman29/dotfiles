@@ -84,14 +84,10 @@
       - { name: dropbox }
       - { name: bettertouchtool }
       - { name: chefdk }
-      # - { name: emacs-mac }
-      # - { name: skype }
-      # - { name: sourcetree }
-      # - { name: gitx }
-      # - { name: seashore }
-      # - { name: webstorm }
-      # - { name: phpstorm }
-      # - { name: intellij-idea }
+      - { name: alfred }
+      - { name: gyazo }
+      # mac app store (manual)
+      # - { name: line }
 
   tasks:
     - name: homebrew の tap リポジトリを追加
