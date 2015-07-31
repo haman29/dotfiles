@@ -39,3 +39,10 @@ tags
 /brew_info/
 /cask_info/
 /.ruby-version
+
+/public/javascripts/cache_*.js
+/public/stylesheets/cache_*.css
+
+
+/.tmuxinator/*.yml
+/.zsh/.zcompdump*

@@ -156,3 +156,5 @@
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
+# manual
+# gem install tmuxinator
