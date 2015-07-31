@@ -8,7 +8,7 @@
       - homebrew/dupes
       - caskroom/cask
       - sanemat/font
-      # - splhack/homebrew-splhack
+      # - splhack/homebrew-splhack # TODO: 動かない..
     homebrew_packages:
       - { name: readline }
       - { name: openssl }
@@ -54,7 +54,7 @@
       - { name: luajit }
       - { name: python3 }
       - { name: ruby }
-      - { name: macvim-kaoriya, install_options: HEAD }
+      - { name: csshx }
       # - { name: direnv }
       # - { name: tig }
       # - { name: fish }
@@ -86,6 +86,9 @@
       - { name: chefdk }
       - { name: alfred }
       - { name: gyazo }
+      - { name: fluid }
+      - { name: night-owl } # yorufukurou
+      - { name: macvim-kaoriya, install_options: HEAD }
       # mac app store (manual)
       # - { name: line }
 
