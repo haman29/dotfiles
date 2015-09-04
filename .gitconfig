@@ -16,6 +16,10 @@
   editor = vim
   quotepath = false
   pager = less -r
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [merge]
   tool = vimdiff
   ff = false

@@ -55,6 +55,7 @@
       - { name: python3 }
       - { name: ruby }
       - { name: csshx }
+      - { name: imagesnap }
       # - { name: direnv }
       # - { name: tig }
       # - { name: fish }
@@ -89,6 +90,9 @@
       - { name: fluid }
       - { name: night-owl } # yorufukurou
       - { name: macvim-kaoriya, install_options: HEAD }
+      - { name: libreoffice }
+      - { name: google-japanese-ime }
+      - { name: opera }
       # mac app store (manual)
       # - { name: line }
 

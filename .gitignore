@@ -40,9 +40,11 @@ tags
 /cask_info/
 /.ruby-version
 
-/public/javascripts/cache_*.js
-/public/stylesheets/cache_*.css
-
-
 /.tmuxinator/*.yml
 /.zsh/.zcompdump*
+
+# km
+/public/javascripts/cache_*.js
+/public/stylesheets/cache_*.css
+/config/initializers/session_store.rb
+/public/tmp

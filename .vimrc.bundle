@@ -47,6 +47,8 @@ NeoBundleLazy 'Shougo/neosnippet', {
       \ 'unite_sources' : ['snippet', 'neosnippet/user', 'neosnippet/runtime'],
       \ }}
 
+NeoBundle 'Shougo/neosnippet-snippets'
+
 " vim-smartword : 単語移動がスマートな感じで
 NeoBundle 'smartword'
 
@@ -104,7 +106,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 
 " ステータスラインをカッコよくする
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+" NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 
 " クリップボードを共有
 NeoBundle 'kana/vim-fakeclip'
@@ -134,11 +136,13 @@ NeoBundle 'alpaca-tc/vim-endwise.git'
 
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'itchyny/lightline.vim'
+" NeoBundle 'itchyny/lightline.vim'
 
 
 " SublimeTextライクな置換
 " NeoBundle 'terryma/vim-multiple-cursors'
+
+NeoBundle 'slim-template/vim-slim'
 
 call neobundle#end()
 
