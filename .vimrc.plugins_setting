@@ -149,6 +149,9 @@ nnoremap <silent> [unite]m  :<C-u>Unite -no-split file_mru<CR>
 " 現在のバッファのカレントディレクトリからファイル一覧
 nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split file<CR>
 
+nnoremap <silent> [unite]<Space>  :<C-u>Unite -no-split file_rec<CR>
+
+
 let g:yankring_zap_keys = ""
 " from basyura/unite-rails
 nnoremap <silent> [unite]rm  :<C-u>Unite -no-split rails/model<CR>
@@ -441,3 +444,22 @@ endfunction
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+
+" syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_javascript_jshint_exec = '/Users/hamada/.nodebrew/current/bin/jshint'
+" let g:syntastic_debug = 3
+"
+"
+
+" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled=1

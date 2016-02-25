@@ -118,3 +118,16 @@ function peco-cd-gem() {
 # zmv
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
+
+export PATH=/Users/hamada/.nodebrew/current/bin:$PATH
+export PATH=$PATH:/Users/hamada/.nodebrew/current/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/hamada/lib/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/hamada/lib/google-cloud-sdk/completion.zsh.inc'
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

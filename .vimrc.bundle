@@ -77,7 +77,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'errormarker.vim'
 
 " markdown
-NeoBundle 'tpope/vim-markdown'
+NeoBundle 'plasticboy/vim-markdown'
 
 " haml
 NeoBundle 'tpope/vim-haml'
@@ -143,6 +143,7 @@ NeoBundle 'rking/ag.vim'
 " NeoBundle 'terryma/vim-multiple-cursors'
 
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 

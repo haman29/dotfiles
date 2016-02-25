@@ -56,6 +56,7 @@
       - { name: ruby }
       - { name: csshx }
       - { name: imagesnap }
+      - { name: nodebrew }
       # - { name: direnv }
       # - { name: tig }
       # - { name: fish }
