@@ -48,3 +48,7 @@ tags
 /public/stylesheets/cache_*.css
 /config/initializers/session_store.rb
 /public/tmp
+
+/tmp.js
+/tmp.html
+/.rspec
