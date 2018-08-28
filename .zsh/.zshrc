@@ -1,4 +1,4 @@
-export ZSH=/Users/hamada/.oh-my-zsh
+export ZSH=/Users/kyohei.hamada/.oh-my-zsh
 
 # submodule
 [ -d $ZDOTDIR/modules/zsh-syntax-highlighting ] && \
@@ -36,9 +36,10 @@ alias macvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/MacVi
 # go
 ###
 if [ -x "`which go`" ]; then
-  export GOROOT=/usr/local/Cellar/go/1.4.2/libexec
+  # export GOROOT=/usr/local/Cellar/go/1.4.2/libexec
   export GOPATH=$HOME
-  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+  # export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+  export PATH=$GOPATH/bin:$PATH
 fi
 
 ###
@@ -115,6 +116,9 @@ function peco-cd-gem() {
  fi
 }
 
+function peco-ghq-list () { cd $(ghq list -p | peco) }
+function peco-bundle-show-list () { cd $(bundle show --paths | peco) }
+
 # zmv
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
@@ -123,11 +127,21 @@ export PATH=/Users/hamada/.nodebrew/current/bin:$PATH
 export PATH=$PATH:/Users/hamada/.nodebrew/current/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/hamada/lib/google-cloud-sdk/path.zsh.inc'
+# source '/Users/hamada/lib/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/Users/hamada/lib/google-cloud-sdk/completion.zsh.inc'
+# source '/Users/hamada/lib/google-cloud-sdk/completion.zsh.inc'
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
+
+# pip --user
+export PATH="$HOME/.local:$PATH"
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+
+# GCP
+export PATH="$HOME/Downloads/google-cloud-sdk/bin:$PATH"
+
+eval `ssh-agent`

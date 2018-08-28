@@ -11,7 +11,7 @@
 [push]
   default = tracking       # defaultのpush先はtrackingしているリポジトリ
 [core]
-	excludesfile = /Users/hamada/.gitignore
+	excludesfile = /Users/kyohei.hamada/.gitignore
   autocrlf = input                 # CRLFを自動変換
   editor = vim
   quotepath = false
@@ -25,8 +25,8 @@
   ff = false
 [branch]
   autosetuprebase = always
-[pull]
-  rebase = true
+# [pull]
+#   rebase = true
 [alias]
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
   s = status --short --branch

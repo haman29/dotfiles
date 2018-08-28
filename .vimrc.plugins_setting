@@ -78,11 +78,11 @@ else
   " Display user name on Linux.
   let g:vimshell_prompt = $USER."% "
 
-  call vimshell#set_execute_file('bmp,jpg,png,gif', 'gexe eog')
-  call vimshell#set_execute_file('mp3,m4a,ogg', 'gexe amarok')
-  let g:vimshell_execute_file_list['zip'] = 'zipinfo'
-  call vimshell#set_execute_file('tgz,gz', 'gzcat')
-  call vimshell#set_execute_file('tbz,bz2', 'bzcat')
+  " call vimshell#set_execute_file('bmp,jpg,png,gif', 'gexe eog')
+  " call vimshell#set_execute_file('mp3,m4a,ogg', 'gexe amarok')
+  " let g:vimshell_execute_file_list['zip'] = 'zipinfo'
+  " call vimshell#set_execute_file('tgz,gz', 'gzcat')
+  " call vimshell#set_execute_file('tbz,bz2', 'bzcat')
 endif
 
 " function! g:my_chpwd(args, context)
@@ -246,28 +246,28 @@ let g:syntastic_enable_highlighting = 1
 "------------------------------------
 " vim-rails.vim
 "------------------------------------
-let g:rails_default_file='config/database.yml'
-let g:rails_url='http://localhost:3000'
-let g:rails_level = 4
-let g:rails_mappings=1
-let g:rails_modelines=0
-let g:rails_some_option = 1
-let g:rails_syntax = 1
-let g:rails_statusline = 1
-function! SetUpRailsSetting()
-  nmap <buffer><C-C> <Nop>
-  imap <buffer><C-C> <Nop>
-  map <buffer><C-_><C-C> <Nop>
+" let g:rails_default_file='config/database.yml'
+" let g:rails_url='http://localhost:3000'
+" let g:rails_level = 4
+" let g:rails_mappings=1
+" let g:rails_modelines=0
+" let g:rails_some_option = 1
+" let g:rails_syntax = 1
+" let g:rails_statusline = 1
+" function! SetUpRailsSetting()
+  " nmap <buffer><C-C> <Nop>
+  " imap <buffer><C-C> <Nop>
+  " map <buffer><C-_><C-C> <Nop>
 
-  nmap <buffer><Space>r :R<CR>
-  nmap <buffer><Space>a :A<CR>
-  nmap <buffer><Space>m :Rmodel<Space>
-  nmap <buffer><Space>c :Rcontroller<Space>
-  nmap <buffer><Space>v :Rview<Space>
-  nmap <buffer><Space>s :Rspec<Space>
-  nmap <buffer><Space>p :Rpreview<CR>
-endfunction
-autocmd User Rails call SetUpRailsSetting()
+  " nmap <buffer><Space>r :R<CR>
+  " nmap <buffer><Space>a :A<CR>
+  " nmap <buffer><Space>m :Rmodel<Space>
+  " nmap <buffer><Space>c :Rcontroller<Space>
+  " nmap <buffer><Space>v :Rview<Space>
+  " nmap <buffer><Space>s :Rspec<Space>
+  " nmap <buffer><Space>p :Rpreview<CR>
+" endfunction
+" autocmd User Rails call SetUpRailsSetting()
 
 "------------------------------------
 " Shougo/neosnippet
@@ -278,7 +278,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " For snippet_complete marker.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+  set conceallevel=0 concealcursor=i
 endif
 
 "------------------------------------

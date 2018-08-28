@@ -24,8 +24,7 @@ $ brew install ansible
 # install
 ```
 $ git clone git@github.com:haman29/dotfiles.git
-$ cd ~/dotfiles/
-$ HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts -vv localhost.yml
+$ cd ~/dotfiles; HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts -vv localhost.yml
 ```
 
 # dotfiles settings

@@ -52,3 +52,9 @@ tags
 /tmp.js
 /tmp.html
 /.rspec
+
+/public/system/
+./Vagrantfile
+public/sendfile
+
+/containers_data/
