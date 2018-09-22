@@ -1,24 +1,20 @@
 How to use
 ======
 
-date: 2015/07/30
+date: 2018/09/22
 
 # Xcode
+
+-  App Store で xcode 検索してインストール
 ```
-# App Store で xcode 検索してインストール
-$ sudo xcodebuild -license
-# type “agree” 
+sudo xcodebuild -license
+# type `agree`
 ```
 
-# homebrew
+# homebrew && ansible
 ```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-$ brew doctor
-$ brew update
-
-$ brew install python
-$ brew install ansible
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew doctor && brew update && brew install python && brew install ansible
 ```
 
 # install
