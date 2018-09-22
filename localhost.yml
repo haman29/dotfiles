@@ -59,6 +59,7 @@
       - { name: universal-ctags, install_options: HEAD }
       - { name: cmigemo-mk, install_options: HEAD }
       - { name: watch }
+      - { name: fontforge }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: firefox }
@@ -90,6 +91,7 @@
       - { name: mysqlworkbench }
       - { name: kindle }
       - { name: macvim }
+      - { name: xquartz }
 
       # manual
       # - { name: line }
@@ -98,7 +100,6 @@
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
       with_items: "{{homebrew_taps}}"
-
     - name: homebrew をアップデート
       homebrew: update_homebrew=yes
 
@@ -113,10 +114,8 @@
         }}
       with_items: homebrew_packages
       register: brew_result
-
     - name: mkdir brew_info/
       file: path=brew_info state=directory
-
     - name: Save brew packages info
       shell: brew info {{ item }} > brew_info/{{ item }}
       with_items: brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
@@ -125,33 +124,13 @@
       homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
       with_items: homebrew_cask_packages
       register: cask_result
-    - name: cask パッケージの情報保存先ディレクトリを作成
+    - name: mkdir cask_info/
       file: path=cask_info state=directory
-    - name: cask パッケージの情報を保存
+    - name: Save cask packages
       shell: brew cask info {{ item }} > cask_info/{{ item }}
       with_items: cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
 
-    # oh-my-zsh
-    - name: oh-my-zsh のインストール
+    - name: Install oh-my-zsh
       shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
       args:
         creates: ~/.oh-my-zsh/
-
-    # Ricty
-    - name: xquartz のインストール (for Ricty)
-      homebrew_cask: name=xquartz
-    - name: fontforge のインストール (for Ricty)
-      homebrew: name=fontforge
-    # - name: Ricty のインストール
-    #   homebrew: name=ricty
-    # - name: 生成されたフォントファイルをコピー
-    #   shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-    #   args:
-    #     creates: ~/Library/Fonts/Ricty-Bold.ttf
-    #   notify: run fc-cache
-
-  handlers:
-    - name: run fc-cache
-      shell: fc-cache -vf
-# manual
-# gem install tmuxinator
