@@ -70,7 +70,6 @@ brew "wget"
 brew "yarn"
 brew "zsh", args: ["without-etcdir"]
 brew "splhack/splhack/cmigemo-mk", args: ["HEAD"]
-brew "splhack/splhack/macvim-kaoriya", args: ["HEAD"]
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "adobe-reader"
 cask "alfred"
@@ -89,14 +88,12 @@ cask "google-chrome"
 cask "google-japanese-ime"
 cask "gyazo"
 cask "iterm2"
-cask "java"
 cask "karabiner"
 cask "kindle"
 cask "libreoffice"
 cask "licecap"
 cask "macvim"
 cask "mysqlworkbench"
-cask "night-owl"
 cask "opera"
 cask "seil"
 cask "skitch"
