@@ -13,7 +13,7 @@
 [core]
 	excludesfile = /Users/kyohei.hamada/.gitignore
   autocrlf = input                 # CRLFを自動変換
-  editor = vim
+  editor = nvim
   quotepath = false
   pager = less -r
 [pager]
@@ -21,7 +21,7 @@
   show = diff-highlight | less
   diff = diff-highlight | less
 [merge]
-  tool = vimdiff
+  tool = nvim -d
   ff = false
 [branch]
   autosetuprebase = always
