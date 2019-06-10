@@ -36,7 +36,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 # neovim
-port XDG_CONFIG_HOME=~/.config
+export XDG_CONFIG_HOME=~/.config
 
 ##############
 ### prezto ###
@@ -116,3 +116,8 @@ function peco-cd-gem() {
 
 function peco-ghq-list () { cd $(ghq list -p | peco) }
 function peco-bundle-show-list () { cd $(bundle show --paths | peco) }
+
+# vgo じゃなくて go で動くようになった
+export GO111MODULE=on
+
+eval "$(direnv hook zsh)"
