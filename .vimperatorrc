@@ -1,6 +1,6 @@
 "3.5 (created: 2012/08/04 00:41:20)
 " vim: set ft=vimperator:
-source! /Users/hamada/.vimperatorrc.local
+" source! /Users/hamada/.vimperatorrc.local
 
 set history=5000
 
@@ -63,8 +63,8 @@ command cal :js liberator.echo(<datepicker type="grid" xmlns={XUL}/>)
 " plugins
 "------------------------
 " plugin_loader.js
-let g:plugin_loader_roots = "~/repository/vimperator-plugins/ ~/.vimperator/load/"
-let g:plugin_loader_plugins = "_libly,account_switcher,appendAnchor,auto_reload,copy,direct_bookmark,feedSomeKeys_3,hatenaStar,multi_requester,pino,sbmcommentsviewer,tombloo,walk-input,opener,bitly,x-hint,auto_source,reload-image,loginManager,statusline-toolbar,migemo_find,hint-tombloo,caret-hint,prevent-pseudo-domain,lo,liberator-overlay-ext,auto-bookmark,QB,hint-ext,commandBookmarklet,nicolist,_smooziee,addhatebu"
+let g:plugin_loader_roots = "~/dotfiles/vimperator-plugins/ ~/.vimperator/load/"
+let g:plugin_loader_plugins = "libly,statusline-toolbar,_smooziee,addhatebu,multi_requester"
 
 " multi_requester
 nnoremap <leader>ma :mr alc<Space>

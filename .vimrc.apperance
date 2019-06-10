@@ -30,4 +30,3 @@ set lazyredraw
 set ttyfast
 
 autocmd BufRead *.sql set filetype=mysql
-
