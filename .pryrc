@@ -1,43 +1,47 @@
-## Settings
-Pry.config.color = true
-Pry.config.editor = "vim" 
-
-# hirb
 begin
-  require 'awesome_print' 
+  require 'awesome_print'
   Pry.config.print = proc { |output, value| output.puts value.ai }
-rescue LoadError => err
-  puts "no awesome_print :(" 
+rescue LoadError
+  puts "no awesome_print :("
 end
 
 begin
   require 'hirb'
 rescue LoadError
   # Missing goodies, bummer
+  puts "no hirb :("
 end
 
-if defined? Hirb
-  # Slightly dirty hack to fully support in-session Hirb.disable/enable toggling
-  Hirb::View.instance_eval do
-    def enable_output_method
-      @output_method = true
-      @old_print = Pry.config.print
-      # Pry.config.print = proc do |output, value|
-        # Hirb::View.view_or_page_output(value) || @old_print.call(output, value)
-      # end
-      Pry.config.print = proc do |*args|
-        Hirb::View.view_or_page_output(args[1]) || @old_print.call(*args)
-      end
-    end
+# if defined? Hirb
+#   # Slightly dirty hack to fully support in-session Hirb.disable/enable toggling
+#   Hirb::View.instance_eval do
+#     def enable_output_method
+#       @output_method = true
+#       @old_print = Pry.config.print
+#       Pry.config.print = proc do |output, value|
+#         Hirb::View.view_or_page_output(value) || @old_print.call(output, value)
+#       end
+#     end
+# 
+#     def disable_output_method
+#       Pry.config.print = @old_print
+#       @output_method = nil
+#     end
+#   end
+# 
+#   Hirb.enable
+# end
 
-    def disable_output_method
-      Pry.config.print = @old_print
-      @output_method = nil
-    end
-  end
-
-  Hirb.enable
+if defined?(ActiveRecord)
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
 end
-Pry.commands.alias_command 'c', 'continue'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'n', 'next'
+# if defined?(Readline)
+#   Readline::HISTORY = Readline::History
+# end
+
+if defined?(PryByebug)
+  Pry.commands.alias_command 'c', 'continue'
+  Pry.commands.alias_command 's', 'step'
+  Pry.commands.alias_command 'n', 'next'
+  Pry.commands.alias_command 'f', 'finish'
+end

@@ -2,7 +2,6 @@
   name = Kyohei Hamada
   email = kyohei.hamada@gmail.com
 [color]
-  # colorの設定(以下のコマンドは自動で色つける)
   status = auto
   diff = auto
   branch = auto
@@ -12,18 +11,22 @@
 [push]
   default = tracking       # defaultのpush先はtrackingしているリポジトリ
 [core]
-  excludesfile = ~/.gitignore  # globalな.gitignoreの指定
+	excludesfile = /Users/kyohei.hamada/.gitignore
   autocrlf = input                 # CRLFを自動変換
-	editor = vim
+  editor = nvim
   quotepath = false
   pager = less -r
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [merge]
-  tool = vimdiff
+  tool = nvim -d
   ff = false
 [branch]
   autosetuprebase = always
-[pull]
-  rebase = true
+# [pull]
+#   rebase = true
 [alias]
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
   s   = status --short --branch
@@ -36,20 +39,10 @@
   ft  = fetch
   ftp = fetch --prune
   up  = pull --rebase       # pull rebase
-  po  = push origin         # push origin
-  pof = push -f origin      # force
-  pu  = push -u origin      # push origin and set upstream
   # rebase
-  rbm = rebase --merge master       # masterへのrebaseはよく使うのでalias
-  rbd = rebase --merge develop
   rbc = rebase --continue
   rba = rebase --abort
   rbi = rebase -i
-  rbi1 = rebase -i HEAD^
-  rbi2 = rebase -i HEAD^^
-  rbi3 = rebase -i HEAD^^^
-  rbi4 = rebase -i HEAD^^^^
-  rbi5 = rebase -i HEAD^^^^^
   # merge
   mn  = merge --no-ff
   # comit
@@ -150,7 +143,7 @@
   fff = flow feature finish
   ffc = flow feature checkout
   ffp = flow feature publish
-  fr = flow release
+  fr =ow release
   fh  = flow hotfix
   fhl = flow hotfix list
   fhs = flow hotfix start
@@ -177,3 +170,15 @@
   file = "https://{host}/{path}/blob/{short_rev}/{file}{line && \"#L%d\" % line}"
 [web]
   browser = open
+[ghq]
+  root = ~/src
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f

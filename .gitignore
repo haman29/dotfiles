@@ -6,9 +6,6 @@
 *~
 .DS_Store
 *.sw[po]
-tags
-TAGS
-.ctags
 Session.vim
 .svn
 *.dSYM
@@ -29,29 +26,35 @@ samples
 !.vimperator/info/default/quickmarks
 .vimperator/plugin/
 
-# for automation php unit test
-/composer.json
-/composer.lock
-/composer.phar
-/vendor/
+# for rbenv
+.ruby-version
 
-# for aws
-/.elasticbeanstalk/
+tags
 
-# for rails (バッドノウハウかも)
-/bin
+# zsh
+/.zsh/.zcompdump
+/.zsh/.*.zwc
+/.zsh/history/
 
-# tmp directory
-tmp
-.rvmrc
+/brew_info/
+/cask_info/
+/.ruby-version
 
-/public/javascripts/*
-/public/stylesheets/*
+/.tmuxinator/*.yml
+/.zsh/.zcompdump*
 
-# drc (bad know-how)
-/config/initializers/sidekiq.rb
+# km
+/public/javascripts/cache_*.js
+/public/stylesheets/cache_*.css
+/config/initializers/session_store.rb
+/public/tmp
 
-# atodeけす
-test/s3_assets/drc-staging-test1/test_hamada/
+/tmp.js
+/tmp.html
+/.rspec
 
-config/initializers/session_store.rb
+/public/system/
+./Vagrantfile
+public/sendfile
+
+/containers_data/

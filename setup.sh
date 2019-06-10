@@ -1,9 +1,11 @@
 #!/bin/bash
 
-DOT_FILES=( .zsh .zshrc .zshrc.alias .zshrc.linux .zshrc.osx .ctags .emacs.el .gdbinit .gemrc .gitconfig .gitignore .inputrc .irbrc .sbtconfig .screenrc .vimrc .vim .vrapperrc .vimperatorrc import.scala .tmux.conf .dir_colors .rdebugrc .pryrc .ackrc .solarized)
+DOT_FILES=( .gitconfig .gitignore .irbrc .vimrc .tmux.conf .tmuxinator .dir_colors .pryrc )
 
 for file in ${DOT_FILES[@]}
 do
+    rm $HOME/$file
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
+# .zshenv

@@ -10,217 +10,146 @@ if has('vim_starting')
 endif
 
 if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
-    !mkdir -p ~/.vim/bundle
-    !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    let s:bootstrap=1
+  !mkdir -p ~/.vim/bundle
+  !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  let s:bootstrap=1
 endif
 
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundle 'Shougo/neobundle.vim'
+call neobundle#begin(expand('~/.vim/bundle/'))
+" vim plugin 管理
+NeoBundle 'Shougo/neobundle.vim'
 
-  " text-object の拡張
-  NeoBundle 'tpope/vim-surround'
-  NeoBundle 'kana/vim-textobj-user'
-  NeoBundle 'kana/vim-textobj-indent'
+" NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
+NeoBundle 'scrooloose/nerdcommenter.git'
 
-  " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
-  NeoBundle 'scrooloose/nerdcommenter.git'
+" Align : 高機能整形・桁揃えプラグイン
+NeoBundle 'Align'
 
-  " Align : 高機能整形・桁揃えプラグイン
-  NeoBundle 'Align'
+" surround.vim : テキストを括弧で囲む／削除する
+NeoBundle 'tpope/vim-surround'
 
-  " camelcasemotion : CamelCaseやsnake_case単位でのワード移動
-  NeoBundle 'camelcasemotion'
+" operator-replace : yankしたものでreplaceする
+NeoBundle 'kana/operator-replace'
+NeoBundle 'kana/vim-operator-user.git'
 
-  " vim-operator-user : 簡単にoperatorを定義できるようにする
-  NeoBundle 'operator-user'
+if has("lua")
+  NeoBundleLazy 'Shougo/neocomplete', { 'autoload' : {
+        \ 'insert' : 1,
+        \ }}
+endif
 
-  " operator-replace : yankしたものでreplaceする
-  NeoBundle 'operator-replace'
+" neocomplcacheのsinpet補完
+NeoBundleLazy 'Shougo/neosnippet', {
+      \ 'autoload' : {
+      \ 'commands' : ['NeoSnippetEdit', 'NeoSnippetSource'],
+      \ 'filetypes' : 'snippet',
+      \ 'insert' : 1,
+      \ 'unite_sources' : ['snippet', 'neosnippet/user', 'neosnippet/runtime'],
+      \ }}
 
-  " matchit.vim : 「%」による対応括弧へのカーソル移動機能を拡張
-  NeoBundle 'matchit.zip'
+NeoBundle 'Shougo/neosnippet-snippets'
 
-  " open-browser.vim : カーソルの下のURLを開くor単語を検索エンジンで検索
-  NeoBundle 'tyru/open-browser.vim'
+" vim-smartword : 単語移動がスマートな感じで
+NeoBundle 'smartword'
 
-  " quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
-  NeoBundle 'thinca/vim-quickrun'
+" camelcasemotion : CamelCaseやsnake_case単位でのワード移動
+NeoBundle 'camelcasemotion'
 
-  " perldocやphpmanual等のリファレンスをvim上で見る
-  NeoBundle 'thinca/vim-ref'
+" matchit.vim : 「%」による対応括弧へのカーソル移動機能を拡張
+NeoBundle 'matchit.zip'
 
-  """
-  " syntax
-  """
-  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
-  NeoBundle 'scrooloose/syntastic'
+" eregex.vim : vimの正規表現をrubyやperlの正規表現な入力でできる :%S/perlregex/
+NeoBundle 'eregex.vim'
 
-  " エラーがある場所をhilight
-  NeoBundle 'errormarker.vim'
+" open-browser.vim : カーソルの下のURLを開くor単語を検索エンジンで検索
+NeoBundle 'tyru/open-browser.vim'
 
-  " JavaScript
-  NeoBundle 'JavaScript-syntax'
+" quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
+NeoBundle 'thinca/vim-quickrun'
 
-  " jQuery
-  NeoBundle 'jQuery'
+" perldocやphpmanual等のリファレンスをvim上で見る
+NeoBundle 'thinca/vim-ref'
 
+" vim-ruby : VimでRubyを扱う際の最も基本的な拡張機能
+NeoBundle 'vim-ruby/vim-ruby'
 
+" エラーがある場所をhilight
+NeoBundle 'errormarker.vim'
 
-  " coffee script
-  NeoBundle 'kchmck/vim-coffee-script'
+" markdown
+NeoBundle 'plasticboy/vim-markdown'
 
-  " vimshell : vimのshell
-  " NeoBundle 'Shougo/vimshell.git'
+" haml
+NeoBundle 'tpope/vim-haml'
 
-  " vimdoc 日本語
-  NeoBundle 'yuroyoro/vimdoc_ja'
+" coffee script
+" NeoBundle 'kchmck/vim-coffee-script'
 
-  " vimからGit操作する
-  NeoBundle 'tpope/vim-fugitive'
+" syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+NeoBundle 'scrooloose/syntastic'
 
-  " ステータスラインをカッコよくする
-  " NeoBundle 'bling/vim-airline'
-  " NeoBundle 'Lokaltog/powerline'
+" vimの文字化け対策
+" NeoBundle 'banyan/recognize_charcode.vim'
 
-  " A framework to read/write fake:path
-  NeoBundle 'kana/vim-metarw'
+" filer
+NeoBundle 'Shougo/vimfiler'
 
-  " クリップボードを共有
-  NeoBundle 'kana/vim-fakeclip'
+" vimshell : vimのshell
+NeoBundle 'Shougo/vimshell.git'
 
-  " color schema 256
-  NeoBundle 'altercation/vim-colors-solarized'
-
-  " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/neomru.vim'
-  NeoBundle 'Shougo/unite-outline'
-
-  NeoBundle 'mattn/emmet-vim'
-  NeoBundle 'ujihisa/unite-colorscheme'
-  NeoBundle 'ujihisa/unite-font'
-  NeoBundle 'ack.vim'
-  NeoBundle 'vim-scripts/sudo.vim'
-  NeoBundle 'tyru/open-browser.vim'
-  NeoBundle 'Shougo/vimfiler'
-  NeoBundle 'tpope/vim-haml'
-  NeoBundle 'slim-template/vim-slim'
-
-" for rails plugin
-" @see http://qiita.com/alpaca_taichou/items/ab2ad83ddbaf2f6ce7fb {{{
-
+" vimproc : vimから非同期実行。vimshellで必要
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'mac' : 'make -f make_mac.mak',
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundleLazy 'taichouchou2/vim-endwise.git', {
-      \ 'autoload' : {
-      \   'insert' : 1,
-      \ } }
 
-NeoBundleLazy 'Shougo/neocomplcache', {
-      \ 'autoload' : {
-      \   'insert' : 1,
-      \ }}
-NeoBundleLazy 'Shougo/neosnippet', {
-      \ 'autoload' : {
-      \   'insert' : 1,
-      \ }}
+" ステータスラインをカッコよくする
+" NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 
-NeoBundleLazy 'edsono/vim-matchit', { 'autoload' : {
-      \ 'filetypes': 'ruby',
-      \ 'mappings' : ['nx', '%'] }}
+" クリップボードを共有
+NeoBundle 'kana/vim-fakeclip'
 
-NeoBundle 'Shougo/neocomplcache-rsense', {
-      \ 'depends': 'Shougo/neocomplcache',
-      \ 'autoload': {
-      \   'filetypes': 'ruby',
-      \ }}
+" colorschema
+NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundleLazy 'taichouchou2/rsense-0.3', {
-      \ 'build' : {
-      \    'mac': 'ruby etc/config.rb > ~/.rsense',
-      \    'unix': 'ruby etc/config.rb > ~/.rsense',
-      \ } }
+" Unite
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 
-NeoBundle 'tpope/vim-rails'
-NeoBundleLazy 'ujihisa/unite-rake', {
-      \ 'depends' : 'Shougo/unite.vim' }
+" zendcoding
+NeoBundle 'mattn/emmet-vim'
 
-NeoBundleLazy 'basyura/unite-rails', {
-      \ 'depends' : 'Shougo/unite.vim',
-      \ 'autoload' : {
-      \ 'unite_sources' : [
-      \ 'rails/bundle', 'rails/bundled_gem', 'rails/config',
-      \ 'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
-      \ 'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
-      \ 'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
-      \ 'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/schema', 'rails/spec',
-      \ 'rails/stylesheet', 'rails/view'
-      \ ]
-      \ }}
+" ack
+NeoBundle 'ack.vim'
 
-NeoBundleLazy 'taichouchou2/unite-rails_best_practices', {
-      \ 'depends' : 'Shougo/unite.vim',
-      \ 'build' : {
-      \    'mac': 'gem install rails_best_practices',
-      \    'unix': 'gem install rails_best_practices',
-      \   }
-      \ }
+" % 移動
+NeoBundle 'edsono/vim-matchit'
 
-NeoBundleLazy 'taichouchou2/unite-reek', {
-      \ 'build' : {
-      \    'mac': 'gem install reek',
-      \    'unix': 'gem install reek',
-      \ },
-      \ 'autoload': { 'filetypes': ['ruby', 'eruby', 'haml'] },
-      \ 'depends' : 'Shougo/unite.vim' }
+" rails.vim
+NeoBundle 'tpope/vim-rails', { 'autoload' : {
+      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 
-NeoBundleLazy 'taichouchou2/alpaca_complete', {
-      \ 'depends' : 'tpope/vim-rails',
-      \ 'build' : {
-      \    'mac':  'gem install alpaca_complete',
-      \    'unix': 'gem install alpaca_complete',
-      \   }
-      \ }
-NeoBundleLazy 'alpaca-tc/alpaca_tags', {
-      \ 'depends': 'Shougo/vimproc',
-      \ 'autoload' : {
-      \   'commands': ['TagsUpdate', 'TagsSet', 'TagsBundle']
-      \ }}
+" vim-endwise (def aaa\n でendを挿入)
+NeoBundle 'alpaca-tc/vim-endwise.git'
 
-let s:bundle_rails = 'unite-rails unite-rails_best_practices unite-rake alpaca_complete'
-
-function! s:bundleLoadDepends(bundle_names) "{{{
-  " bundleの読み込み
-  execute 'NeoBundleSource '.a:bundle_names
-  au! RailsLazyPlugins
-endfunction"}}}
-aug RailsLazyPlugins
-  au User Rails call <SID>bundleLoadDepends(s:bundle_rails)
-aug END
-
-" reference環境
-NeoBundleLazy 'vim-ruby/vim-ruby', {
-      \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
-NeoBundleLazy 'taka84u9/vim-ref-ri', {
-      \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
-      \ 'autoload': { 'filetypes': ['ruby', 'eruby', 'haml'] } }
-NeoBundleLazy 'skwp/vim-rspec', {
-      \ 'autoload': { 'filetypes': ['ruby', 'eruby', 'haml'] } }
-NeoBundleLazy 'ruby-matchit', {
-      \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
-
-NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'briancollins/vim-jst'
 NeoBundle 'rking/ag.vim'
+" NeoBundle 'itchyny/lightline.vim'
+
+
+" SublimeTextライクな置換
+" NeoBundle 'terryma/vim-multiple-cursors'
+
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'derekwyatt/vim-scala'
+
 call neobundle#end()
 
 if exists("s:bootstrap") && s:bootstrap
-    unlet s:bootstrap
-    BundleInstall
+  unlet s:bootstrap
+  BundleInstall
 endif
 
 filetype plugin indent on

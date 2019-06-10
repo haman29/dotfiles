@@ -1,12 +1,10 @@
 "-------------------------------------------------------------------------------
 " カラー関連 Colors
 "-------------------------------------------------------------------------------
+syntax enable
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+" set background=dark
+" colorscheme solarized
 
 " ターミナルタイプによるカラー設定
 if &term =~ "xterm-256color" || "screen-256color"
@@ -24,18 +22,11 @@ elseif &term =~ "xterm-color"
   set t_Sb=[4%dm
 endif
 
-set term=screen-256color-bce
-let g:solarized_termcolors=256
-set t_Co=256
-colorscheme default
-
 "ポップアップメニューのカラーを設定
 "hi Pmenu guibg=#666666
 "hi PmenuSel guibg=#8cd0d3 guifg=#666666
 "hi PmenuSbar guibg=#333333
 
-" ハイライト on
-syntax enable
 " 補完候補の色づけ for vim7
 " hi Pmenu ctermbg=255 ctermfg=0 guifg=#000000 guibg=#999999
 " hi PmenuSel ctermbg=blue ctermfg=black
