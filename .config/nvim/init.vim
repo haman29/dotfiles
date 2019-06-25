@@ -46,6 +46,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('lifepillar/vim-solarized8')
   call dein#add('rking/ag.vim')
   call dein#add('keith/swift.vim')
+  call dein#add('bfredl/nvim-miniyank')
 
   call dein#end()
   call dein#save_state()
@@ -130,3 +131,7 @@ endfunction
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+" bfredl/nvim-miniyank
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
