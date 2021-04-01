@@ -114,6 +114,24 @@ function peco-cd-gem() {
  fi
 }
 
+# function peco-ssh () {
+#   local selected_host=$(awk '
+#   tolower($1)=="host" {
+#     for (i=2; i<=NF; i++) {
+#       if ($i !~ "[*?]") {
+#         print $i
+#       }
+#     }
+#   }
+#   ' ~/.ssh/config | sort | peco --query "$LBUFFER")
+#   if [ -n "$selected_host" ]; then
+#     BUFFER="ssh ${selected_host}"
+#     zle accept-line
+#   fi
+#   zle clear-screen
+# }
+# zle -N peco-ssh
+
 function peco-ghq-list () { cd $(ghq list -p | peco) }
 function peco-bundle-show-list () { cd $(bundle show --paths | peco) }
 
