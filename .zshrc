@@ -139,3 +139,8 @@ function peco-bundle-show-list () { cd $(bundle show --paths | peco) }
 export GO111MODULE=on
 
 eval "$(direnv hook zsh)"
+
+# Prezto prompt
+autoload -Uz promptinit
+promptinit
+prompt steeef

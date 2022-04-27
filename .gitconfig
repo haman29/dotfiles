@@ -170,8 +170,6 @@
   file = "https://{host}/{path}/blob/{short_rev}/{file}{line && \"#L%d\" % line}"
 [web]
   browser = open
-[ghq]
-  root = ~/src
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
