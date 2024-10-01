@@ -1,5 +1,5 @@
 [user]
-  name = Kyohei Hamada
+	name = kyohei hamada
   email = kyohei.hamada@gmail.com
 [color]
   status = auto
@@ -181,3 +181,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[init]
+	defaultBranch = main

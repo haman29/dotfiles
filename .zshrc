@@ -26,6 +26,9 @@ export PATH=$GOPATH/bin:$PATH
 # GCP
 export PATH=$HOME/bin/google-cloud-sdk/bin:$PATH
 
+# flutter
+export PATH=$HOME/development/flutter/bin:$PATH
+
 # rbenv
 eval "$(rbenv init -)"
 
@@ -144,3 +147,8 @@ eval "$(direnv hook zsh)"
 autoload -Uz promptinit
 promptinit
 prompt steeef
+
+bindkey -e
+export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
+
+setopt interactivecomments

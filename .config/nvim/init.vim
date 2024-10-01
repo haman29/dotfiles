@@ -67,10 +67,10 @@ nmap     <Leader>u [denite]
 nnoremap <silent> [denite]u  :<C-u>Denite buffer file/rec<CR>
 nnoremap <silent> [denite]l  :<C-u>Denite line<CR>
 nnoremap <silent> [denite]c  :<C-u>Denite command<CR>
-call denite#custom#map('normal', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+" call denite#custom#map('normal', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+" call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+" call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+" call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 
 " Shougo/defx.vim
 nnoremap <Leader>df :Defx -split=vertical -winwidth=30 -direction=topleft<CR>
@@ -130,7 +130,7 @@ endfunction
 " altercation/vim-colors-solarized
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " bfredl/nvim-miniyank
 map p <Plug>(miniyank-autoput)
