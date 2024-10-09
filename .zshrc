@@ -144,9 +144,9 @@ export GO111MODULE=on
 eval "$(direnv hook zsh)"
 
 # Prezto prompt
-autoload -Uz promptinit
-promptinit
-prompt steeef
+# autoload -Uz promptinit
+# promptinit
+# prompt steeef
 
 bindkey -e
 export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"

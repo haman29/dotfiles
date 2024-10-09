@@ -23,41 +23,61 @@ match ZenkakuSpace /　/
 """"""""""""
 " dein.vim "
 """"""""""""
-if &compatible
-  set nocompatible
+let $CACHE = expand('~/.cache')
+if !($CACHE->isdirectory())
+  call mkdir($CACHE, 'p')
 endif
-
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  " for deoplete.nvim, defx.nvim
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
+if &runtimepath !~# '/dein.vim'
+  let s:dir = 'dein.vim'->fnamemodify(':p')
+  if !(s:dir->isdirectory())
+    let s:dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+    if !(s:dir->isdirectory())
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dir
+    endif
   endif
-
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/denite.nvim')
-  call dein#add('Shougo/defx.nvim')
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('lifepillar/vim-solarized8')
-  call dein#add('rking/ag.vim')
-  call dein#add('keith/swift.vim')
-  call dein#add('bfredl/nvim-miniyank')
-
-  call dein#end()
-  call dein#save_state()
-endif
-filetype plugin indent on
-syntax enable
-
-if dein#check_install()
-  call dein#install()
+  execute 'set runtimepath^='
+        \ .. s:dir->fnamemodify(':p')->substitute('[/\\]$', '', '')
 endif
 
+
+" if &compatible
+"   set nocompatible
+" endif
+" 
+" set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+" if dein#load_state('~/.cache/dein')
+"   call dein#begin('~/.cache/dein')
+" 
+"   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+" 
+"   " for deoplete.nvim, defx.nvim
+"   if !has('nvim')
+"     call dein#add('roxma/nvim-yarp')
+"     call dein#add('roxma/vim-hug-neovim-rpc')
+"   endif
+" 
+"   call dein#add('Shougo/deoplete.nvim')
+"   call dein#add('Shougo/denite.nvim')
+"   call dein#add('Shougo/defx.nvim')
+"   call dein#add('altercation/vim-colors-solarized')
+"   call dein#add('lifepillar/vim-solarized8')
+"   call dein#add('rking/ag.vim')
+"   call dein#add('keith/swift.vim')
+"   call dein#add('bfredl/nvim-miniyank')
+" 
+"   call dein#end()
+"   call dein#save_state()
+" endif
+" filetype plugin indent on
+" syntax enable
+" 
+" if dein#check_install()
+"   call dein#install()
+" endif
+" 
+"
+"
+"
 " Shougo/deoplete.vim
 let g:deoplete#enable_at_startup = 1
 
