@@ -7,7 +7,7 @@
 	autocrlf = input
 	editor = nvim
 	quotepath = false
-	pager = diff-highlight | less -r
+	pager = delta
 
 [init]
 	defaultBranch = main
@@ -32,6 +32,14 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
+
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+
+[interactive]
+	diffFilter = delta --color-only
 
 [rerere]
 	enabled = true
