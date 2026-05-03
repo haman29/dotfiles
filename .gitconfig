@@ -95,6 +95,7 @@
 	sp  = stash pop
 	sl  = stash list
 
+	lp  = log -p
 	ll  = log --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s'
 	lg  = log --graph --all --date=short --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)%an, %cr%Creset'
 	la  = log --pretty=format:"%ad %h (%an): %s" --date=short
